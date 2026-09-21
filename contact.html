@@ -311,400 +311,283 @@
 }
 </style>
 
-
-<style id="stackly-contact-mobile-menu-isolated">
-/* =========================================================
-   STACKLY CONTACT — SAME PREMIUM MOBILE MENU AS BLOG
-   Unique class names prevent navigation.js conflicts.
-   The menu is intentionally above the entire header.
-   ========================================================= */
+<style id="stackly-services-mobile-menu-isolated">
 @media (max-width:767px){
-
-  html.stk-contact-menu-lock,
-  body.stk-contact-menu-lock{
-    overflow:hidden !important;
-    touch-action:none;
-  }
-
-  .site-header{
-    z-index:10020 !important;
-  }
-
-  .stk-contact-trigger{
-    position:relative;
-    z-index:10031;
-    display:flex !important;
-    flex:0 0 44px;
-    width:44px;
-    height:44px;
-    align-items:center;
-    justify-content:center;
-    padding:0;
-    border:0;
-    border-radius:12px;
-    background:rgba(255,255,255,.94);
-    color:#8d1228;
-    box-shadow:0 8px 22px rgba(44,24,18,.10);
-    cursor:pointer;
-    -webkit-tap-highlight-color:transparent;
-  }
-
-  .stk-contact-trigger span{
-    position:absolute;
-    width:20px;
-    height:2px;
-    border-radius:10px;
-    background:#8d1228;
-    transition:transform .28s ease,opacity .2s ease,top .28s ease;
-  }
-
-  .stk-contact-trigger span:nth-child(1){top:14px}
-  .stk-contact-trigger span:nth-child(2){top:21px}
-  .stk-contact-trigger span:nth-child(3){top:28px}
-
-  .stk-contact-trigger.is-open span:nth-child(1){
-    top:21px;
-    transform:rotate(45deg);
-  }
-  .stk-contact-trigger.is-open span:nth-child(2){opacity:0}
-  .stk-contact-trigger.is-open span:nth-child(3){
-    top:21px;
-    transform:rotate(-45deg);
-  }
-
-  .stk-contact-menu{
-    position:fixed !important;
-    inset:0 !important;
-    width:100% !important;
-    height:100% !important;
-    box-sizing:border-box;
-    padding:14px 12px !important;
-    display:block !important;
-    z-index:10040 !important;
-    background:rgba(31,18,15,.28);
-    backdrop-filter:blur(9px);
-    -webkit-backdrop-filter:blur(9px);
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-    transition:opacity .25s ease,visibility 0s linear .42s;
-  }
-
-  .stk-contact-menu.is-open{
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
-    transition:opacity .25s ease,visibility 0s linear 0s;
-  }
-
-  .stk-contact-menu-card{
-    position:relative;
-    z-index:10041;
-    width:100%;
-    height:100%;
-    box-sizing:border-box;
-    display:flex;
-    flex-direction:column;
-    overflow:hidden;
-    padding:22px 18px 20px;
-    border:1px solid rgba(141,18,40,.13);
-    border-radius:20px;
-    background:
-      radial-gradient(circle at 88% 10%,rgba(200,160,74,.14),transparent 30%),
-      linear-gradient(145deg,#fffdf8 0%,#f8f1e7 58%,#f5eee6 100%);
-    box-shadow:0 24px 70px rgba(44,24,18,.25);
-    isolation:isolate;
-    transform:translateY(22px) scale(.985);
-    transition:transform .42s cubic-bezier(.22,.8,.2,1);
-  }
-
-  .stk-contact-menu.is-open .stk-contact-menu-card{
-    transform:translateY(0) scale(1);
-  }
-
-  .stk-contact-menu-head{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    flex:0 0 auto;
-    margin-bottom:18px;
-  }
-
-  .stk-contact-menu-brand{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    width:max-content;
-    color:#741020 !important;
-    text-decoration:none !important;
-  }
-
-  .stk-contact-menu-mark{
-    width:38px;
-    height:38px;
-    flex:0 0 38px;
-  }
-
-  .stk-contact-menu-brand > span{
-    font-family:Fraunces,serif;
-    font-size:23px;
-    font-weight:600;
-    letter-spacing:-.03em;
-  }
-
-  .stk-contact-menu-close{
-    position:relative;
-    flex:0 0 44px;
-    width:44px;
-    height:44px;
-    padding:0;
-    border:1px solid rgba(116,16,32,.12);
-    border-radius:13px;
-    background:rgba(255,255,255,.86);
-    box-shadow:0 8px 22px rgba(44,24,18,.09);
-    cursor:pointer;
-  }
-
-  .stk-contact-menu-close span{
-    position:absolute;
-    left:12px;
-    top:20px;
-    width:20px;
-    height:2px;
-    border-radius:10px;
-    background:#a71930;
-  }
-
-  .stk-contact-menu-close span:first-child{transform:rotate(45deg)}
-  .stk-contact-menu-close span:last-child{transform:rotate(-45deg)}
-
-  .stk-contact-menu-nav{
-    display:flex !important;
-    flex:1 1 auto;
-    min-height:0;
-    flex-direction:column;
-    justify-content:center;
-    gap:5px !important;
-    margin:0 !important;
-    padding:0 !important;
-  }
-
-  .stk-contact-menu-nav a{
-    position:relative;
-    display:flex !important;
-    align-items:center;
-    justify-content:space-between;
-    width:100%;
-    min-height:52px;
-    box-sizing:border-box;
-    padding:12px 13px !important;
-    border:1px solid transparent;
-    border-radius:12px;
-    color:#2a211e !important;
-    background:transparent;
-    font-family:Inter,sans-serif;
-    font-size:16px !important;
-    font-weight:600;
-    letter-spacing:-.01em;
-    text-decoration:none !important;
-    transition:background .2s ease,color .2s ease,transform .2s ease,border-color .2s ease;
-  }
-
-  .stk-contact-menu-nav a > span{
-    color:#a71930;
-    font-size:18px;
-    font-weight:500;
-    opacity:.72;
-    transition:transform .2s ease;
-  }
-
-  .stk-contact-menu-nav a:hover,
-  .stk-contact-menu-nav a:focus-visible{
-    color:#8d1228 !important;
-    background:rgba(167,25,48,.07);
-    border-color:rgba(167,25,48,.10);
-    transform:translateX(3px);
-    outline:none;
-  }
-
-  .stk-contact-menu-nav a:hover > span,
-  .stk-contact-menu-nav a:focus-visible > span{
-    transform:translateX(3px);
-  }
-
-  .stk-contact-menu-nav a.is-active{
-    color:#a71930 !important;
-    font-weight:700;
-    background:rgba(167,25,48,.08);
-    border-color:rgba(167,25,48,.12);
-    transform:translateX(3px);
-  }
-
-  .stk-contact-menu-nav a.is-active::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:50%;
-    width:4px;
-    height:24px;
-    border-radius:10px;
-    transform:translateY(-50%);
-    background:linear-gradient(180deg,#a71930,#c8a04a);
-  }
-
-  .stk-contact-menu-actions{
-    display:grid !important;
-    grid-template-columns:1fr 1fr;
-    gap:10px !important;
-    flex:0 0 auto;
-    margin:18px 0 0 !important;
-    padding-top:16px;
-    border-top:1px solid rgba(116,16,32,.10);
-  }
-
-  .stk-contact-menu-actions a{
-    min-height:48px;
-    box-sizing:border-box;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:12px;
-    padding:11px 10px;
-    font:700 13px/1 Inter,sans-serif;
-    text-decoration:none;
-  }
-
-  .stk-contact-demo-btn{
-    gap:8px;
-    color:#fff !important;
-    background:#a71930;
-    box-shadow:0 9px 22px rgba(167,25,48,.18);
-  }
-
-  .stk-contact-demo-btn span{
-    font-size:17px;
-    line-height:1;
-    font-weight:500;
-  }
-
-  .stk-contact-sign-btn{
-    color:#741020 !important;
-    background:rgba(255,255,255,.72);
-    border:1px solid rgba(116,16,32,.18);
-  }
-
-  .stk-contact-menu-foot{
-    flex:0 0 auto;
-    margin-top:14px;
-    text-align:center;
-    color:rgba(42,33,30,.48);
-    font:500 10px/1.4 Inter,sans-serif;
-    letter-spacing:.04em;
-  }
-
-  /* Important: once the menu is open, the old header is below it
-     and cannot remain clickable. This prevents the duplicate-logo
-     issue from the previous version. */
-  body:has(.stk-contact-menu.is-open) .site-header{
-    pointer-events:none !important;
-  }
+  html.stk-services-menu-lock, body.stk-services-menu-lock{overflow:hidden !important;touch-action:none}
+  .site-header{z-index:10020 !important}
+  .stk-services-trigger{position:relative;z-index:10031;display:flex !important;flex:0 0 44px;width:44px;height:44px;align-items:center;justify-content:center;padding:0;border:0;border-radius:12px;background:rgba(255,255,255,.94);color:#8d1228;box-shadow:0 8px 22px rgba(44,24,18,.10);cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .stk-services-trigger span{position:absolute;width:20px;height:2px;border-radius:10px;background:#8d1228;transition:transform .28s ease,opacity .2s ease,top .28s ease}
+  .stk-services-trigger span:nth-child(1){top:14px}.stk-services-trigger span:nth-child(2){top:21px}.stk-services-trigger span:nth-child(3){top:28px}
+  .stk-services-trigger.is-open span:nth-child(1){top:21px;transform:rotate(45deg)}.stk-services-trigger.is-open span:nth-child(2){opacity:0}.stk-services-trigger.is-open span:nth-child(3){top:21px;transform:rotate(-45deg)}
+  .stk-services-menu{position:fixed !important;inset:0 !important;width:100% !important;height:100% !important;box-sizing:border-box;padding:14px 12px !important;display:block !important;z-index:10040 !important;background:rgba(31,18,15,.28);backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility 0s linear .42s}
+  .stk-services-menu.is-open{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .25s ease,visibility 0s linear 0s}
+  .stk-services-menu-card{position:relative;z-index:10041;width:100%;height:100%;box-sizing:border-box;display:flex;flex-direction:column;overflow:hidden;padding:22px 18px 20px;border:1px solid rgba(141,18,40,.13);border-radius:20px;background:radial-gradient(circle at 88% 10%,rgba(200,160,74,.14),transparent 30%),linear-gradient(145deg,#fffdf8 0%,#f8f1e7 58%,#f5eee6 100%);box-shadow:0 24px 70px rgba(44,24,18,.25);isolation:isolate;transform:translateY(22px) scale(.985);transition:transform .42s cubic-bezier(.22,.8,.2,1)}
+  .stk-services-menu.is-open .stk-services-menu-card{transform:translateY(0) scale(1)}
+  .stk-services-menu-head{display:flex;align-items:center;justify-content:space-between;flex:0 0 auto;margin-bottom:18px}
+  .stk-services-menu-brand{display:flex;align-items:center;gap:9px;width:max-content;color:#741020 !important;text-decoration:none !important}
+  .stk-services-menu-mark{width:38px;height:38px;flex:0 0 38px}
+  .stk-services-menu-close{position:relative;flex:0 0 44px;width:44px;height:44px;padding:0;border:1px solid rgba(116,16,32,.12);border-radius:13px;background:rgba(255,255,255,.86);box-shadow:0 8px 22px rgba(44,24,18,.09);cursor:pointer}
+  .stk-services-menu-close span{position:absolute;left:12px;top:20px;width:20px;height:2px;border-radius:10px;background:#a71930}
+  .stk-services-menu-close span:first-child{transform:rotate(45deg)}.stk-services-menu-close span:last-child{transform:rotate(-45deg)}
+  .stk-services-menu-nav{display:flex !important;flex:1 1 auto;min-height:0;flex-direction:column;justify-content:center;gap:5px !important;margin:0 !important;padding:0 !important}
+  .stk-services-menu-nav a{position:relative;display:flex !important;align-items:center;justify-content:space-between;width:100%;min-height:52px;box-sizing:border-box;padding:12px 13px !important;border:1px solid transparent;border-radius:12px;color:#2a211e !important;background:transparent;font-family:Inter,sans-serif;font-size:16px !important;font-weight:600;letter-spacing:-.01em;text-decoration:none !important;transition:background .2s ease,color .2s ease,transform .2s ease,border-color .2s ease}
+  .stk-services-menu-nav a > span{color:#a71930;font-size:18px;font-weight:500;opacity:.72;transition:transform .2s ease}
+  .stk-services-menu-nav a:hover,.stk-services-menu-nav a:focus-visible{color:#8d1228 !important;background:rgba(167,25,48,.07);border-color:rgba(167,25,48,.10);transform:translateX(3px);outline:none}
+  .stk-services-menu-nav a:hover > span,.stk-services-menu-nav a:focus-visible > span{transform:translateX(3px)}
+  .stk-services-menu-nav a.is-active{color:#a71930 !important;font-weight:700;background:rgba(167,25,48,.08);border-color:rgba(167,25,48,.12);transform:translateX(3px)}
+  .stk-services-menu-nav a.is-active::before{content:"";position:absolute;left:0;top:50%;width:4px;height:24px;border-radius:10px;transform:translateY(-50%);background:linear-gradient(180deg,#a71930,#c8a04a)}
+  .stk-services-menu-actions{display:grid !important;grid-template-columns:1fr 1fr;gap:10px !important;flex:0 0 auto;margin:18px 0 0 !important;padding-top:16px;border-top:1px solid rgba(116,16,32,.10)}
+  .stk-services-menu-actions a{min-height:48px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;border-radius:12px;padding:11px 10px;font:700 13px/1 Inter,sans-serif;text-decoration:none}
+  .stk-services-demo-btn{gap:8px;color:#fff !important;background:#a71930;box-shadow:0 9px 22px rgba(167,25,48,.18)}
+  .stk-services-demo-btn span{font-size:17px;line-height:1;font-weight:500}
+  .stk-services-sign-btn{color:#741020 !important;background:rgba(255,255,255,.72);border:1px solid rgba(116,16,32,.18)}
+  .stk-services-menu-foot{flex:0 0 auto;margin-top:14px;text-align:center;color:rgba(42,33,30,.48);font:500 10px/1.4 Inter,sans-serif;letter-spacing:.04em}
+  body:has(.stk-services-menu.is-open) .site-header{pointer-events:none !important}
 }
-
 @media (max-width:390px){
-  .stk-contact-menu{
-    padding:10px 9px !important;
-  }
-
-  .stk-contact-menu-card{
-    padding:18px 15px 16px;
-    border-radius:18px;
-  }
-
-  .stk-contact-menu-head{
-    margin-bottom:16px;
-  }
-
-  .stk-contact-menu-mark{
-    width:34px;
-    height:34px;
-    flex-basis:34px;
-  }
-
-  .stk-contact-menu-brand > span{
-    font-size:21px;
-  }
-
-  .stk-contact-menu-nav a{
-    min-height:47px;
-    padding:10px 11px !important;
-    font-size:15px !important;
-  }
-
-  .stk-contact-menu-actions{
-    margin-top:12px !important;
-    padding-top:12px;
-  }
-
-  .stk-contact-menu-actions a{
-    min-height:45px;
-    font-size:12px;
-  }
-
-  .stk-contact-menu-foot{
-    margin-top:10px;
-    font-size:9px;
-  }
+  .stk-services-menu{padding:10px 9px !important}.stk-services-menu-card{padding:18px 15px 16px;border-radius:18px}.stk-services-menu-head{margin-bottom:16px}.stk-services-menu-mark{width:34px;height:34px;flex-basis:34px}.stk-services-menu-nav a{min-height:47px;padding:10px 11px !important;font-size:15px !important}.stk-services-menu-actions{margin-top:12px !important;padding-top:12px}.stk-services-menu-actions a{min-height:45px;font-size:12px}.stk-services-menu-foot{margin-top:10px;font-size:9px}
 }
+@media (min-width:768px){.stk-services-trigger,.stk-services-menu{display:none !important}}
+</style>
 
-@media (min-width:768px){
-  .stk-contact-trigger,
-  .stk-contact-menu{
-    display:none !important;
-  }
+<style id="stackly-services-mobile-menu-hard-reset">
+@media (max-width:767px){
+  .stk-services-menu,.stk-services-menu *{box-sizing:border-box}
+  .stk-services-menu-card,.stk-services-menu-card a,.stk-services-menu-card button{max-width:100%}
+  .stk-services-menu-card a{overflow:hidden}
+  .stk-services-menu-actions a{white-space:nowrap;overflow:hidden}
+  .stk-services-menu-foot{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 }
 </style>
 
+<style id="stackly-service-logo-treatment">
+.stackly-logo-webp{width:180px !important;height:auto !important;max-width:none !important;flex:0 0 auto !important;display:block !important;object-fit:contain !important;object-position:center !important;background:transparent !important;border:0 !important;border-radius:0 !important;filter:brightness(0) saturate(100%) invert(17%) sepia(78%) saturate(2544%) hue-rotate(340deg) brightness(83%) contrast(99%)}
+.pl-logo .stackly-logo-webp{width:42px !important;height:42px !important;flex:0 0 42px !important}
+.site-header .brand .stackly-logo-webp{width:180px !important;height:auto !important;flex:0 0 auto !important}
+@media (max-width:767px){.site-header .brand .stackly-logo-webp{width:160px !important;height:auto !important;flex:0 0 auto !important}}
+@media (max-width:390px){.site-header .brand .stackly-logo-webp{width:145px !important;height:auto !important;flex:0 0 auto !important}}
+.stk-services-menu-mark.stackly-logo-webp{width:180px !important;height:auto !important;flex:0 0 auto !important}
+@media (max-width:767px){.stk-services-menu-mark.stackly-logo-webp{width:160px !important;height:auto !important}}
+@media (max-width:390px){.stk-services-menu-mark.stackly-logo-webp{width:145px !important;height:auto !important}}
+</style>
 
-<style id="stackly-global-webp-logo">
-  /* Same WebP logo treatment as About: preloader, desktop header, mobile menu and footer */
-  .stackly-logo-webp{
-    display:block !important;
-    width:38px !important;
-    height:38px !important;
-    flex:0 0 38px !important;
-    object-fit:contain !important;
-    object-position:center !important;
-    filter:
-      brightness(0)
-      saturate(100%)
-      invert(17%)
-      sepia(78%)
-      saturate(2544%)
-      hue-rotate(340deg)
-      brightness(83%)
-      contrast(99%);
-  }
+<style id="stackly-contact-active-status">
+.site-header .main-nav > li > a.stk-contact-nav{display:inline-flex !important;align-items:center !important;justify-content:center !important;width:max-content !important;min-width:max-content !important;max-width:none !important;flex:0 0 auto !important;white-space:nowrap !important;word-break:keep-all !important;overflow-wrap:normal !important;line-height:1 !important;padding:10px 2px !important;position:relative !important;text-decoration:none !important;color:#2a211e !important;transition:color .25s ease,transform .25s ease !important}
+.site-header .main-nav > li > a.stk-contact-nav::after{content:"" !important;position:absolute !important;left:0 !important;right:0 !important;bottom:2px !important;height:2px !important;border-radius:999px !important;background:#a71930 !important;transform:scaleX(0) !important;transform-origin:center !important;transition:transform .25s ease !important}
+.site-header .main-nav > li > a.stk-contact-nav:hover{color:#a71930 !important;transform:translateY(-1px) !important}
+.site-header .main-nav > li > a.stk-contact-nav:hover::after{transform:scaleX(1) !important}
+.site-header .main-nav > li > a.stk-contact-nav.is-active{color:#A71930 !important}
+.site-header .main-nav > li > a.stk-contact-nav.is-active::after{transform:scaleX(1) !important}
+@media (max-width:1100px){.site-header .main-nav > li > a.stk-contact-nav{white-space:nowrap !important;min-width:max-content !important}}
+</style>
 
-  .pl-logo .stackly-logo-webp{
-    width:34px !important;
-    height:34px !important;
-    flex-basis:34px !important;
-  }
 
-  .brand .stackly-logo-webp,
-  .stk-contact-menu-brand .stackly-logo-webp{
-    width:38px !important;
-    height:38px !important;
-    flex-basis:38px !important;
-  }
+<style id="stackly-contact-extra-sections-css">
+/* =========================================================
+   STACKLY CONTACT — ADDITIONAL SECTIONS
+   ========================================================= */
+.stackly-contact-page .contact-extra-section{
+  position:relative;
+  padding:clamp(72px,8vw,112px) 0;
+  overflow:hidden;
+  background:#fff;
+}
+.stackly-contact-page .contact-extra-section.alt{
+  background:
+    radial-gradient(circle at 8% 20%,rgba(200,160,74,.09),transparent 24%),
+    radial-gradient(circle at 92% 80%,rgba(167,25,48,.06),transparent 26%),
+    #faf7f2;
+}
+.stackly-contact-page .contact-extra-head{
+  max-width:720px;
+  margin:0 auto 46px;
+  text-align:center;
+}
+.stackly-contact-page .contact-extra-head .section-title{
+  margin:10px auto 14px;
+}
+.stackly-contact-page .contact-extra-head .lead{
+  max-width:650px;
+  margin:0 auto;
+}
 
-  @media (max-width:390px){
-    .stk-contact-menu-brand .stackly-logo-webp{
-      width:34px !important;
-      height:34px !important;
-      flex-basis:34px !important;
-    }
+/* WhatsApp / contact channels */
+.stackly-contact-page .contact-channel-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px;
+}
+.stackly-contact-page .contact-channel-card{
+  position:relative;
+  min-height:235px;
+  padding:30px;
+  border:1px solid rgba(23,23,27,.09);
+  border-radius:24px;
+  background:linear-gradient(145deg,#fff,#faf7f2);
+  box-shadow:0 18px 55px rgba(25,18,18,.07);
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+}
+.stackly-contact-page .contact-channel-card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 26px 65px rgba(25,18,18,.11);
+  border-color:rgba(167,25,48,.18);
+}
+.stackly-contact-page .contact-channel-icon{
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  margin-bottom:22px;
+  border-radius:16px;
+  color:var(--contact-red);
+  background:rgba(167,25,48,.07);
+}
+.stackly-contact-page .contact-channel-icon svg{
+  width:23px;
+  height:23px;
+}
+.stackly-contact-page .contact-channel-card.whatsapp .contact-channel-icon{
+  color:#fff;
+  background:linear-gradient(135deg,#1fa855,#128c45);
+}
+.stackly-contact-page .contact-channel-card h3{
+  margin:0 0 8px;
+  font-size:1.15rem;
+}
+.stackly-contact-page .contact-channel-card p{
+  margin:0 0 16px;
+  color:var(--contact-muted);
+  font-size:.86rem;
+  line-height:1.65;
+}
+.stackly-contact-page .contact-channel-card a{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  color:var(--contact-red);
+  font-weight:700;
+  text-decoration:none;
+}
+.stackly-contact-page .contact-channel-card a:hover{
+  text-decoration:underline;
+}
+
+/* What happens next */
+.stackly-contact-page .contact-process{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
+  position:relative;
+}
+.stackly-contact-page .contact-process-card{
+  position:relative;
+  padding:32px 28px;
+  border:1px solid rgba(23,23,27,.09);
+  border-radius:24px;
+  background:#fff;
+}
+.stackly-contact-page .contact-process-number{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  margin-bottom:22px;
+  border-radius:50%;
+  color:#fff;
+  background:linear-gradient(135deg,var(--contact-red),var(--contact-deep));
+  font:800 .78rem/1 Inter,sans-serif;
+}
+.stackly-contact-page .contact-process-card h3{
+  margin:0 0 9px;
+  font-size:1.12rem;
+}
+.stackly-contact-page .contact-process-card p{
+  margin:0;
+  color:var(--contact-muted);
+  font-size:.84rem;
+  line-height:1.7;
+}
+
+/* FAQ */
+.stackly-contact-page .contact-faq-list{
+  max-width:900px;
+  margin:0 auto;
+  display:grid;
+  gap:12px;
+}
+.stackly-contact-page .contact-faq-item{
+  border:1px solid rgba(23,23,27,.10);
+  border-radius:17px;
+  background:#fff;
+  overflow:hidden;
+}
+.stackly-contact-page .contact-faq-item summary{
+  position:relative;
+  list-style:none;
+  cursor:pointer;
+  padding:21px 58px 21px 22px;
+  color:var(--contact-ink);
+  font:700 .91rem/1.45 Inter,sans-serif;
+}
+.stackly-contact-page .contact-faq-item summary::-webkit-details-marker{
+  display:none;
+}
+.stackly-contact-page .contact-faq-item summary::after{
+  content:"+";
+  position:absolute;
+  right:22px;
+  top:50%;
+  transform:translateY(-50%);
+  color:var(--contact-red);
+  font-size:1.35rem;
+  font-weight:400;
+}
+.stackly-contact-page .contact-faq-item[open] summary::after{
+  content:"−";
+}
+.stackly-contact-page .contact-faq-answer{
+  padding:0 22px 22px;
+  color:var(--contact-muted);
+  font-size:.84rem;
+  line-height:1.7;
+}
+.stackly-contact-page .contact-faq-answer p{
+  margin:0;
+}
+
+@media(max-width:900px){
+  .stackly-contact-page .contact-channel-grid,
+  .stackly-contact-page .contact-process{
+    grid-template-columns:1fr;
   }
+  .stackly-contact-page .contact-channel-card{
+    min-height:auto;
+  }
+}
+@media(max-width:620px){
+  .stackly-contact-page .contact-extra-section{
+    padding:62px 0;
+  }
+  .stackly-contact-page .contact-extra-head{
+    margin-bottom:34px;
+  }
+  .stackly-contact-page .contact-channel-card,
+  .stackly-contact-page .contact-process-card{
+    padding:25px 21px;
+    border-radius:20px;
+  }
+  .stackly-contact-page .contact-faq-item summary{
+    padding:18px 50px 18px 18px;
+  }
+  .stackly-contact-page .contact-faq-answer{
+    padding:0 18px 18px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .stackly-contact-page .contact-channel-card{
+    transition:none;
+  }
+}
 </style>
 
 </head>
@@ -718,7 +601,7 @@
       <circle class="ring-track" cx="50" cy="50" r="46" fill="none" stroke-width="2.5"/>
       <circle class="ring-fill" cx="50" cy="50" r="46" fill="none" stroke-width="2.5"/>
     </svg>
-    <div class="pl-logo"><img class="mark stackly-logo-webp" src="assets/img/logo.webp" alt="Stackly" aria-hidden="true"></div>
+    <div class="pl-logo"><img class="mark stackly-logo-webp" src="assets/img/stackly-logo.webp" alt="Stackly" aria-hidden="true"></div>
   </div>
   <div class="pl-bar"><span></span></div>
   <div class="pl-num">00</div>
@@ -726,64 +609,60 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <a href="index.html" class="brand" aria-label="Stackly home"><img class="mark stackly-logo-webp" src="assets/img/logo.webp" alt="Stackly" aria-hidden="true"><span class="wordmark">Stackly</span></a>
+    <a href="index.html" class="brand" aria-label="Stackly home">
+      <img class="mark stackly-logo-webp" src="assets/img/stackly-logo.webp" alt="Stackly" aria-hidden="true">
+    </a>
     <nav aria-label="Primary">
       <ul class="main-nav">
         <li><a href="index.html" class="nav-home">Home</a></li>
-        <li>
-          <a href="product.html">Products <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><use href="#i-chevron"/></svg></a>
-        </li>
-        <li>
-          <a href="services.html">Solutions <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><use href="#i-chevron"/></svg></a>
-        </li>
-        <li>
-          <a href="blog.html">Resources <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><use href="#i-chevron"/></svg></a>
-        </li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="services.html">Solutions</a></li>
+        <li><a href="blog.html">Resources</a></li>
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact </a></li>
+        <li><a href="contact.html" class="stk-contact-nav is-active" aria-current="page">Contact</a></li>
       </ul>
     </nav>
     <div class="header-actions">
-      <button class="lang-select" aria-label="Change language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-globe"/></svg><b>EN</b><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><use href="#i-chevron"/></svg></button>
-      <a href="login.html" class="btn btn-primary btn-sm"><span>Request a Demo</span><svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
-      <button class="stk-contact-trigger" type="button" aria-label="Open menu" aria-expanded="false">
-  <span></span><span></span><span></span>
-</button>
+      <button class="lang-select" aria-label="Change language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-globe"/></svg>
+        <b>EN</b>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><use href="#i-chevron"/></svg>
+      </button>
+      <a href="login.html" class="btn btn-primary btn-sm">
+        <span>Request a Demo</span>
+        <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg>
+      </a>
+      <button class="stk-services-trigger" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
-<div class="stk-contact-menu" aria-label="Mobile navigation" aria-hidden="true">
-  <div class="stk-contact-menu-card">
-    <div class="stk-contact-menu-head">
-      <a href="index.html" class="stk-contact-menu-brand" aria-label="Stackly home">
-        <img class="stk-contact-menu-mark stackly-logo-webp" src="assets/img/logo.webp" alt="Stackly" aria-hidden="true">
-        <span>Stackly</span>
+
+<div class="stk-services-menu" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="stk-services-menu-card">
+    <div class="stk-services-menu-head">
+      <a href="index.html" class="stk-services-menu-brand" aria-label="Stackly home">
+        <img class="stk-services-menu-mark stackly-logo-webp" src="assets/img/stackly-logo.webp" alt="Stackly">
       </a>
-
-      <button class="stk-contact-menu-close" type="button" aria-label="Close menu">
-        <span></span><span></span>
-      </button>
+      <button class="stk-services-menu-close" type="button" aria-label="Close menu"><span></span><span></span></button>
     </div>
-
-    <nav class="stk-contact-menu-nav" aria-label="Mobile primary navigation">
+    <nav class="stk-services-menu-nav" aria-label="Mobile primary navigation">
       <a href="index.html">Home<span aria-hidden="true">→</span></a>
       <a href="product.html">Products<span aria-hidden="true">→</span></a>
-      <a href="services.html">Solutions<span aria-hidden="true">→</span></a>
+      <a href="services.html">Services<span aria-hidden="true">→</span></a>
       <a href="blog.html">Resources<span aria-hidden="true">→</span></a>
       <a href="pricing.html">Pricing<span aria-hidden="true">→</span></a>
       <a href="about.html">About Us<span aria-hidden="true">→</span></a>
       <a href="contact.html" class="is-active" aria-current="page">Contact<span aria-hidden="true">→</span></a>
     </nav>
-
-    <div class="stk-contact-menu-actions">
-      <a href="login.html" class="stk-contact-demo-btn">Request a Demo<span aria-hidden="true">→</span></a>
-      <a href="register.html" class="stk-contact-sign-btn">Sign In</a>
+    <div class="stk-services-menu-actions">
+      <a href="login.html" class="stk-services-demo-btn"><span>Request a Demo</span><span aria-hidden="true">→</span></a>
+      <a href="register.html" class="stk-services-sign-btn">Sign In</a>
     </div>
-
-    <div class="stk-contact-menu-foot">&copy; <span data-year>2026</span> Stackly Enterprise. All rights reserved.</div>
+    <div class="stk-services-menu-foot">&copy; <span data-year>2026</span> Stackly Enterprise. All rights reserved.</div>
   </div>
 </div>
+
 <div class="search-overlay" role="dialog" aria-label="Search Stackly">
   <button class="icon-btn so-close" aria-label="Close search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-plus"/></svg></button>
   <input type="text" placeholder="Search Stackly..." aria-label="Search query">
@@ -810,19 +689,19 @@
           <p class="lead" style="margin-bottom:36px">No ticket queues, no bots pretending to be people. Reach us directly — we actually enjoy these conversations.</p>
           <div class="contact-detail-card">
       <div class="contact-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-mail"/></svg></div>
-      <div><b>Email</b><p><a href="mailto:hello@stackly.example">hello@stackly.example</a></p><p><a href="mailto:sales@stackly.example">sales@stackly.example</a></p></div>
+      <div><b>Email</b><p><a href="mailto:info@thestackly.com">info@thestackly.com</a></p><p>General enquiries &amp; business conversations</p></div>
     </div>
           <div class="contact-detail-card">
       <div class="contact-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-phone"/></svg></div>
-      <div><b>Phone</b><p><a href="tel:+18005550142">+1 (800) 555-0142</a></p><p>Mon&ndash;Fri, 8am&ndash;8pm ET</p></div>
+      <div><b>WhatsApp</b><p><a href="https://wa.me/917010792745" target="_blank" rel="noopener">+91 70107 92745</a></p><p>Chat with us directly on WhatsApp</p></div>
     </div>
           <div class="contact-detail-card">
       <div class="contact-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-pin"/></svg></div>
-      <div><b>Headquarters</b><p>One Market Plaza, Suite 4000</p><p>San Francisco, CA 94105</p></div>
+      <div><b>Headquarters</b><p>MMR COMPLEX, SALEM</p><p>Tamil Nadu 636008</p></div>
     </div>
           <div class="contact-detail-card">
       <div class="contact-detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-headset"/></svg></div>
-      <div><b>24/7 Support</b><p><a href="faq.html">Browse the Help Center</a></p><p>Enterprise SLA: 4-minute response</p></div>
+      <div><b>Response</b><p>We aim to respond within one business day.</p><p>For quick conversations, use WhatsApp.</p></div>
     </div>
         </div>
         <div class="contact-form-panel">
@@ -858,15 +737,123 @@
       </div>
     </div>
   </section>
+
+  <!-- SECTION 02 — CONTACT CHANNELS -->
+  <section class="contact-extra-section" aria-labelledby="contact-channels-title">
+    <div class="container">
+      <div class="contact-extra-head">
+        <span class="eyebrow">Connect Directly</span>
+        <h2 id="contact-channels-title" class="section-title">Choose the <span class="accent">Way</span> That Works for You</h2>
+        <p class="lead">Have a quick question or a detailed business enquiry? Reach Stackly through the channel that feels easiest.</p>
+      </div>
+
+      <div class="contact-channel-grid">
+        <article class="contact-channel-card whatsapp">
+          <div class="contact-channel-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20.5 11.5a8.5 8.5 0 0 1-12.9 7.2L3.5 20l1.3-4A8.5 8.5 0 1 1 20.5 11.5z"/>
+              <path d="M8.7 8.3c.3-.6.6-.6.9-.6h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.5.7c-.1.2-.1.4 0 .6.5.9 1.2 1.6 2.1 2.1.2.1.4.1.6-.1l.7-.6c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.4.5v.5c0 .3-.1.6-.6.9-.5.3-1.3.4-2.2.1-1-.3-2.2-1-3.3-2.1-1.1-1.1-1.8-2.3-2.1-3.3-.3-.9-.2-1.7.1-2.2z"/>
+            </svg>
+          </div>
+          <h3>WhatsApp</h3>
+          <p>For a quick conversation, reach our team directly on WhatsApp.</p>
+          <a href="https://wa.me/917010792745" target="_blank" rel="noopener">+91 70107 92745 <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="contact-channel-card">
+          <div class="contact-channel-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-mail"/></svg>
+          </div>
+          <h3>Email</h3>
+          <p>Send your requirement, project details or partnership enquiry to our team.</p>
+          <a href="mailto:info@thestackly.com">info@thestackly.com <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="contact-channel-card">
+          <div class="contact-channel-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-pin"/></svg>
+          </div>
+          <h3>Visit Stackly</h3>
+          <p>Our headquarters is located at MMR COMPLEX, Salem, Tamil Nadu.</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=MMR+COMPLEX+Salem+Tamil+Nadu+636008" target="_blank" rel="noopener">Get directions <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03 — WHAT HAPPENS NEXT -->
+  <section class="contact-extra-section alt" aria-labelledby="contact-process-title">
+    <div class="container">
+      <div class="contact-extra-head">
+        <span class="eyebrow">What Happens Next</span>
+        <h2 id="contact-process-title" class="section-title">From <span class="accent">Message</span> to Conversation</h2>
+        <p class="lead">A simple process designed to get your questions in front of the right Stackly team.</p>
+      </div>
+
+      <div class="contact-process">
+        <article class="contact-process-card">
+          <div class="contact-process-number">01</div>
+          <h3>Tell Us What You Need</h3>
+          <p>Share your goals, requirements, timeline or the challenge you want Stackly to help solve.</p>
+        </article>
+
+        <article class="contact-process-card">
+          <div class="contact-process-number">02</div>
+          <h3>We Review Your Enquiry</h3>
+          <p>Our team reviews the details and connects your enquiry with the appropriate person or team.</p>
+        </article>
+
+        <article class="contact-process-card">
+          <div class="contact-process-number">03</div>
+          <h3>Start the Conversation</h3>
+          <p>We get back to you within one business day so you can discuss the next steps directly.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04 — FAQ -->
+  <section class="contact-extra-section" aria-labelledby="contact-faq-title">
+    <div class="container">
+      <div class="contact-extra-head">
+        <span class="eyebrow">Need to Know?</span>
+        <h2 id="contact-faq-title" class="section-title">Common <span class="accent">Questions</span></h2>
+        <p class="lead">A few quick answers before you reach out.</p>
+      </div>
+
+      <div class="contact-faq-list">
+        <details class="contact-faq-item">
+          <summary>How can I contact Stackly directly?</summary>
+          <div class="contact-faq-answer"><p>You can use the contact form above, email <a href="mailto:info@thestackly.com">info@thestackly.com</a>, or message us on WhatsApp at <a href="https://wa.me/917010792745" target="_blank" rel="noopener">+91 70107 92745</a>.</p></div>
+        </details>
+
+        <details class="contact-faq-item">
+          <summary>Where is Stackly headquartered?</summary>
+          <div class="contact-faq-answer"><p>Stackly's headquarters is at MMR COMPLEX, SALEM, Tamil Nadu 636008.</p></div>
+        </details>
+
+        <details class="contact-faq-item">
+          <summary>How quickly will someone respond?</summary>
+          <div class="contact-faq-answer"><p>Our contact page is set up to communicate a response within one business day.</p></div>
+        </details>
+
+        <details class="contact-faq-item">
+          <summary>What can I contact Stackly about?</summary>
+          <div class="contact-faq-answer"><p>You can contact us about product enquiries, business requirements, partnerships, pricing, demos and other Stackly-related questions.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
   <div class="container">
-    <a href="index.html" class="brand" aria-label="Stackly home"><img class="mark stackly-logo-webp" src="assets/img/logo.webp" alt="Stackly" aria-hidden="true"><span class="wordmark">Stackly</span></a>
+    <a href="index.html" class="brand" aria-label="Stackly home"><img class="mark stackly-logo-webp" src="assets/img/stackly-logo.webp" alt="Stackly" aria-hidden="true"><span class="wordmark"></span></a>
     <p class="footer-statement">Technology that moves <span class="accent">business</span> forward.</p>
     <div class="footer-grid">
       <div class="footer-col footer-about">
-        <h5>Stackly</h5>
+         
         <p>The all-in-one enterprise platform for operations, analytics and growth — trusted by 500+ businesses worldwide.</p>
         <div class="social-row">
           <a href="404.html" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.49 2.49 0 1 1 5 8.48a2.49 2.49 0 0 1-.02-4.98zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9z"/></svg></a>
@@ -876,7 +863,7 @@
       </div>
       <div class="footer-col"><h5>Solutions</h5><ul><li><a href="404.html">Enterprise Suite</a></li><li><a href="404.html">Analytics Cloud</a></li><li><a href="404.html">Automation</a></li><li><a href="404.html">Integrations</a></li></ul></div>
       <div class="footer-col"><h5>Company</h5>
-        <ul><li><a href="index.html">home</a></li><li><a href="product.html">products</a></li><li><a href="services.html">solutions</a></li><li><a href="blog.html">resources</a></li><li><a href="pricing.html">pricing</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">contact</a></li></ul></div>      <div class="footer-col"><h5>Resources</h5><ul><li><a href="404.html">Pricing</a></li><li><a href="404.html">FAQ</a></li><li><a href="404.html">Documentation</a></li><li><a href="404.html">Dashboard Demo</a></li></ul></div>
+        <ul><li><a href="index.html">Home</a></li><li><a href="product.html">Products</a></li><li><a href="services.html">Solutions</a></li><li><a href="blog.html">Resources</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">contact</a></li></ul></div>      <div class="footer-col"><h5>Resources</h5><ul><li><a href="404.html">Pricing</a></li><li><a href="404.html">FAQ</a></li><li><a href="404.html">Documentation</a></li><li><a href="404.html">Dashboard Demo</a></li></ul></div>
            <div class="footer-col newsletter">
   <h5>Stay Ahead</h5>
 
@@ -887,7 +874,7 @@
     <input
       type="text"
       class="stk-footer-email"
-      placeholder="Your work email"
+      placeholder="email"
       aria-label="Email address"
     >
 
@@ -1254,78 +1241,30 @@
 })();
 </script>
 
-
-<script id="stackly-contact-mobile-menu-controller">
+<script id="stackly-services-mobile-menu-controller">
 (function(){
-  'use strict';
-
-  function initStacklyContactMobileMenu(){
-    var trigger=document.querySelector('.stk-contact-trigger');
-    var menu=document.querySelector('.stk-contact-menu');
-    var closeButton=document.querySelector('.stk-contact-menu-close');
-
-    if(!trigger || !menu || !closeButton) return;
-
-    function openMenu(){
-      menu.classList.add('is-open');
-      menu.setAttribute('aria-hidden','false');
-      trigger.classList.add('is-open');
-      trigger.setAttribute('aria-expanded','true');
-      trigger.setAttribute('aria-label','Close menu');
-      document.documentElement.classList.add('stk-contact-menu-lock');
-      document.body.classList.add('stk-contact-menu-lock');
+  function initServicesMenu(){
+    var trigger=document.querySelector('.stk-services-trigger');
+    var menu=document.querySelector('.stk-services-menu');
+    var closeButton=document.querySelector('.stk-services-menu-close');
+    if(!trigger||!menu||!closeButton||menu.dataset.stkBound==='true')return;
+    menu.dataset.stkBound='true';
+    function setOpen(open){
+      trigger.classList.toggle('is-open',open);
+      menu.classList.toggle('is-open',open);
+      trigger.setAttribute('aria-expanded',String(open));
+      menu.setAttribute('aria-hidden',String(!open));
+      document.documentElement.classList.toggle('stk-services-menu-lock',open);
+      document.body.classList.toggle('stk-services-menu-lock',open);
     }
-
-    function closeMenu(){
-      menu.classList.remove('is-open');
-      menu.setAttribute('aria-hidden','true');
-      trigger.classList.remove('is-open');
-      trigger.setAttribute('aria-expanded','false');
-      trigger.setAttribute('aria-label','Open menu');
-      document.documentElement.classList.remove('stk-contact-menu-lock');
-      document.body.classList.remove('stk-contact-menu-lock');
-    }
-
-    trigger.addEventListener('click',function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      if(menu.classList.contains('is-open')) closeMenu();
-      else openMenu();
-    });
-
-    closeButton.addEventListener('click',function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      closeMenu();
-    });
-
-    menu.addEventListener('click',function(e){
-      if(e.target===menu) closeMenu();
-    });
-
-    menu.querySelectorAll('.stk-contact-menu-nav a, .stk-contact-menu-brand, .stk-contact-menu-actions a')
-      .forEach(function(link){
-        link.addEventListener('click',function(){
-          closeMenu();
-        });
-      });
-
-    document.addEventListener('keydown',function(e){
-      if(e.key==='Escape' && menu.classList.contains('is-open')){
-        closeMenu();
-      }
-    });
-
-    window.addEventListener('resize',function(){
-      if(window.innerWidth>=768) closeMenu();
-    });
+    trigger.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();setOpen(!menu.classList.contains('is-open'))});
+    closeButton.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();setOpen(false)});
+    menu.addEventListener('click',function(e){if(e.target===menu)setOpen(false)});
+    menu.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){setOpen(false)})});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('is-open'))setOpen(false)});
+    window.addEventListener('resize',function(){if(window.innerWidth>=768)setOpen(false)});
   }
-
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',initStacklyContactMobileMenu,{once:true});
-  }else{
-    initStacklyContactMobileMenu();
-  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initServicesMenu);else initServicesMenu();
 })();
 </script>
 

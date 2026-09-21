@@ -287,285 +287,42 @@
 
 </style>
 
-<style id="stackly-mobile-menu-final-fix">
-/* =========================================================
-   STACKLY — MOBILE MENU FINAL FIX
-   The mobile navigation is an independent full-screen layer.
-   It must never expose the hero/content behind the menu.
-   ========================================================= */
-@media (max-width: 767px){
-  body{overflow-x:hidden}
-  body.stackly-menu-open{overflow:hidden;touch-action:none}
-
-  .site-header{z-index:10020}
-
-  .hamburger{
-    position:relative;
-    z-index:10030;
-    flex:0 0 44px;
-    border:0;
-    border-radius:12px;
-    background:rgba(255,255,255,.92);
-    color:#8d1228;
-    box-shadow:0 8px 22px rgba(44,24,18,.10);
-    cursor:pointer;
-  }
-  .hamburger span{
-    position:absolute;
-    width:20px;
-    height:2px;
-    border-radius:10px;
-    background:#8d1228;
-    transition:transform .28s ease, opacity .2s ease, top .28s ease;
-  }
-  .hamburger span:nth-child(1){top:14px}
-  .hamburger span:nth-child(2){top:21px}
-  .hamburger span:nth-child(3){top:28px}
-  .hamburger.is-open span:nth-child(1){top:21px;transform:rotate(45deg)}
-  .hamburger.is-open span:nth-child(2){opacity:0}
-  .hamburger.is-open span:nth-child(3){top:21px;transform:rotate(-45deg)}
-
-  /* Backdrop behind the actual panel */
-  .mobile-menu::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:rgba(31,18,15,.26);
-    backdrop-filter:blur(8px);
-    -webkit-backdrop-filter:blur(8px);
-    opacity:0;
-    pointer-events:none;
-    transition:opacity .28s ease;
-    z-index:-1;
-  }
-
-  .mobile-menu{
-    position:fixed !important;
-    inset:14px 12px 14px 12px !important;
-    width:auto !important;
-    height:auto !important;
-    max-height:none !important;
-    margin:0 !important;
-    padding:22px 18px 20px !important;
-    box-sizing:border-box;
-    display:flex !important;
-    flex-direction:column;
-    overflow:hidden !important;
-    z-index:10010 !important;
-    background:
-      radial-gradient(circle at 88% 12%,rgba(200,160,74,.14),transparent 30%),
-      linear-gradient(145deg,#fffdf8 0%,#f8f1e7 58%,#f5eee6 100%);
-    border:1px solid rgba(141,18,40,.13);
-    border-radius:20px;
-    box-shadow:0 24px 70px rgba(44,24,18,.25);
-    transform:translate3d(0,110%,0) !important;
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-    transition:transform .42s cubic-bezier(.22,.8,.2,1),opacity .25s ease,visibility 0s linear .42s;
-  }
-
-  .mobile-menu.open,
-  body.stackly-menu-open .mobile-menu{
-    transform:translate3d(0,0,0) !important;
-    opacity:1 !important;
-    visibility:visible !important;
-    pointer-events:auto !important;
-    transition:transform .42s cubic-bezier(.22,.8,.2,1),opacity .25s ease,visibility 0s linear 0s;
-  }
-  body.stackly-menu-open .mobile-menu::before,
-  .mobile-menu.open::before{opacity:1}
-
-  .mobile-menu .mm-brand{
-    display:flex !important;
-    align-items:center;
-    gap:9px;
-    flex:0 0 auto;
-    width:max-content;
-    margin:0 0 24px !important;
-    padding:2px 0 !important;
-    color:#741020;
-    text-decoration:none;
-  }
-  .mobile-menu .mm-brand .mark{width:38px;height:38px;flex:0 0 38px}
-  .mobile-menu .mm-brand .wordmark{
-    font-family:Fraunces,serif;
-    font-size:23px;
-    font-weight:600;
-    letter-spacing:-.03em;
-  }
-
-  .mobile-menu nav{
-    display:flex !important;
-    flex:1 1 auto;
-    flex-direction:column;
-    justify-content:center;
-    gap:5px !important;
-    min-height:0;
-    margin:0 !important;
-    padding:0 !important;
-  }
-  .mobile-menu nav a{
-    position:relative;
-    display:flex !important;
-    align-items:center;
-    justify-content:space-between;
-    width:100%;
-    min-height:52px;
-    padding:12px 13px !important;
-    box-sizing:border-box;
-    border:1px solid transparent;
-    border-radius:12px;
-    color:#2a211e !important;
-    background:transparent;
-    font-family:Inter,sans-serif;
-    font-size:16px !important;
-    font-weight:600;
-    letter-spacing:-.01em;
-    text-decoration:none !important;
-    transition:background .2s ease,color .2s ease,transform .2s ease,border-color .2s ease;
-  }
-  .mobile-menu nav a::after{
-    content:"→";
-    color:#a71930;
-    font-size:18px;
-    font-weight:500;
-    opacity:.7;
-    transition:transform .2s ease;
-  }
-  .mobile-menu nav a:hover,
-  .mobile-menu nav a:focus-visible{
-    color:#8d1228 !important;
-    background:rgba(167,25,48,.07);
-    border-color:rgba(167,25,48,.10);
-    transform:translateX(3px);
-    outline:none;
-  }
-  .mobile-menu nav a:hover::after,
-  .mobile-menu nav a:focus-visible::after{transform:translateX(3px)}
-
-  .mm-actions{
-    display:grid !important;
-    grid-template-columns:1fr 1fr;
-    gap:10px !important;
-    flex:0 0 auto;
-    margin:18px 0 0 !important;
-    padding-top:16px;
-    border-top:1px solid rgba(116,16,32,.10);
-  }
-  .mm-actions .btn{
-    width:100% !important;
-    min-height:48px;
-    padding:11px 10px !important;
-    justify-content:center;
-    border-radius:12px;
-    font-size:13px;
-  }
-  .mm-actions .btn-outline{
-    background:rgba(255,255,255,.65);
-    border-color:rgba(116,16,32,.20);
-    color:#741020;
-  }
-  .mm-foot{
-    flex:0 0 auto;
-    margin-top:14px;
-    text-align:center;
-    color:rgba(42,33,30,.48);
-    font:500 10px/1.4 Inter,sans-serif;
-    letter-spacing:.04em;
-  }
-
-  /* The page remains completely underneath the menu. */
-  body.stackly-menu-open > main,
-  body.stackly-menu-open > footer,
-  body.stackly-menu-open > .to-top{
-    pointer-events:none;
-  }
-}
-
-@media (max-width:390px){
-  .mobile-menu{inset:10px 9px 10px !important;padding:18px 15px 16px !important;border-radius:18px}
-  .mobile-menu .mm-brand{margin-bottom:16px !important}
-  .mobile-menu .mm-brand .mark{width:34px;height:34px;flex-basis:34px}
-  .mobile-menu .mm-brand .wordmark{font-size:21px}
-  .mobile-menu nav a{min-height:47px;padding:10px 11px !important;font-size:15px !important}
-  .mm-actions{margin-top:12px !important;padding-top:12px}
-  .mm-actions .btn{min-height:45px;font-size:12px}
-  .mm-foot{margin-top:10px;font-size:9px}
-}
-
-@media (min-width:768px){
-  .mobile-menu{display:none !important}
-}
 </style>
 
 
-<style id="stackly-active-nav-fix">
+<style id="stackly-customer-stories-people-fix">
 /* =========================================================
-   STACKLY — ACTIVE NAVIGATION
-   Automatically highlights the current page.
+   STACKLY — CUSTOMER STORIES PEOPLE IMAGES
+   Replaces initials with premium circular customer portraits.
    ========================================================= */
-.main-nav a.active,
-.mobile-menu nav a.active {
-  color:#A71930 !important;
-  font-weight:700;
-}
-
-.main-nav a.active{
-  position:relative;
-}
-
-.main-nav a.active::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:-8px;
-  height:2px;
-  border-radius:10px;
-  background:linear-gradient(90deg,#A71930,#C8A04A);
-}
-
-.mobile-menu nav a.active{
-  background:rgba(167,25,48,.08);
-  border-color:rgba(167,25,48,.12);
-  color:#8D1228 !important;
-  transform:translateX(3px);
-}
-
-.mobile-menu nav a.active::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:50%;
-  width:4px;
-  height:24px;
-  border-radius:10px;
-  transform:translateY(-50%);
-  background:linear-gradient(180deg,#A71930,#C8A04A);
-}
+.t-ava{width:68px!important;height:68px!important;min-width:68px!important;border-radius:50%!important;overflow:hidden!important;position:relative;flex:0 0 68px;background:linear-gradient(135deg,#a71930,#c8a04a);border:2px solid rgba(200,160,74,.42);box-shadow:0 10px 26px rgba(74,18,30,.16)}
+.t-ava img{display:block!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center top!important;transition:transform .45s cubic-bezier(.2,.7,.2,1),filter .35s ease}
+.t-card:hover .t-ava img{transform:scale(1.07);filter:saturate(1.05) contrast(1.02)}
+.t-ava::after{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.24);pointer-events:none}
+@media(max-width:767px){.t-ava{width:58px!important;height:58px!important;min-width:58px!important;flex-basis:58px}}
 </style>
 
 
-<style id="stackly-home-mobile-menu-isolated">
+
+<style id="stackly-services-mobile-menu-final">
 /* =========================================================
-   STACKLY HOME — PREMIUM MOBILE MENU
-   Isolated class names prevent conflicts with old menu JS/CSS.
-   Same menu design used on the fixed Contact page.
+   STACKLY — FINAL MASTER MOBILE MENU
+   Shared implementation from the finalized Service page.
    ========================================================= */
+*,
+*::before,
+*::after{box-sizing:border-box}
+
 @media (max-width:767px){
-
-  html.stk-home-menu-lock,
-  body.stk-home-menu-lock{
+  html.stk-services-menu-lock,
+  body.stk-services-menu-lock{
     overflow:hidden !important;
     touch-action:none;
   }
 
-  .site-header{
-    z-index:10020 !important;
-  }
+  .site-header{z-index:10020 !important}
 
-  .stk-home-trigger{
+  .stk-services-trigger{
     position:relative;
     z-index:10031;
     display:flex !important;
@@ -584,7 +341,7 @@
     -webkit-tap-highlight-color:transparent;
   }
 
-  .stk-home-trigger span{
+  .stk-services-trigger span{
     position:absolute;
     width:20px;
     height:2px;
@@ -592,22 +349,14 @@
     background:#8d1228;
     transition:transform .28s ease,opacity .2s ease,top .28s ease;
   }
+  .stk-services-trigger span:nth-child(1){top:14px}
+  .stk-services-trigger span:nth-child(2){top:21px}
+  .stk-services-trigger span:nth-child(3){top:28px}
+  .stk-services-trigger.is-open span:nth-child(1){top:21px;transform:rotate(45deg)}
+  .stk-services-trigger.is-open span:nth-child(2){opacity:0}
+  .stk-services-trigger.is-open span:nth-child(3){top:21px;transform:rotate(-45deg)}
 
-  .stk-home-trigger span:nth-child(1){top:14px}
-  .stk-home-trigger span:nth-child(2){top:21px}
-  .stk-home-trigger span:nth-child(3){top:28px}
-
-  .stk-home-trigger.is-open span:nth-child(1){
-    top:21px;
-    transform:rotate(45deg);
-  }
-  .stk-home-trigger.is-open span:nth-child(2){opacity:0}
-  .stk-home-trigger.is-open span:nth-child(3){
-    top:21px;
-    transform:rotate(-45deg);
-  }
-
-  .stk-home-menu{
+  .stk-services-menu{
     position:fixed !important;
     inset:0 !important;
     width:100% !important;
@@ -625,14 +374,14 @@
     transition:opacity .25s ease,visibility 0s linear .42s;
   }
 
-  .stk-home-menu.is-open{
+  .stk-services-menu.is-open{
     opacity:1;
     visibility:visible;
     pointer-events:auto;
     transition:opacity .25s ease,visibility 0s linear 0s;
   }
 
-  .stk-home-menu-card{
+  .stk-services-menu-card{
     position:relative;
     z-index:10041;
     width:100%;
@@ -653,11 +402,11 @@
     transition:transform .42s cubic-bezier(.22,.8,.2,1);
   }
 
-  .stk-home-menu.is-open .stk-home-menu-card{
+  .stk-services-menu.is-open .stk-services-menu-card{
     transform:translateY(0) scale(1);
   }
 
-  .stk-home-menu-head{
+  .stk-services-menu-head{
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -665,29 +414,21 @@
     margin-bottom:18px;
   }
 
-  .stk-home-menu-brand{
+  .stk-services-menu-brand{
     display:flex;
     align-items:center;
-    gap:9px;
     width:max-content;
     color:#741020 !important;
     text-decoration:none !important;
   }
 
-  .stk-home-menu-mark{
-    width:38px;
-    height:38px;
-    flex:0 0 38px;
+  .stk-services-menu-mark.stackly-logo-webp{
+    width:180px !important;
+    height:auto !important;
+    flex:0 0 auto !important;
   }
 
-  .stk-home-menu-brand > span{
-    font-family:Fraunces,serif;
-    font-size:23px;
-    font-weight:600;
-    letter-spacing:-.03em;
-  }
-
-  .stk-home-menu-close{
+  .stk-services-menu-close{
     position:relative;
     flex:0 0 44px;
     width:44px;
@@ -700,7 +441,7 @@
     cursor:pointer;
   }
 
-  .stk-home-menu-close span{
+  .stk-services-menu-close span{
     position:absolute;
     left:12px;
     top:20px;
@@ -709,11 +450,10 @@
     border-radius:10px;
     background:#a71930;
   }
+  .stk-services-menu-close span:first-child{transform:rotate(45deg)}
+  .stk-services-menu-close span:last-child{transform:rotate(-45deg)}
 
-  .stk-home-menu-close span:first-child{transform:rotate(45deg)}
-  .stk-home-menu-close span:last-child{transform:rotate(-45deg)}
-
-  .stk-home-menu-nav{
+  .stk-services-menu-nav{
     display:flex !important;
     flex:1 1 auto;
     min-height:0;
@@ -724,7 +464,7 @@
     padding:0 !important;
   }
 
-  .stk-home-menu-nav a{
+  .stk-services-menu-nav a{
     position:relative;
     display:flex !important;
     align-items:center;
@@ -745,7 +485,7 @@
     transition:background .2s ease,color .2s ease,transform .2s ease,border-color .2s ease;
   }
 
-  .stk-home-menu-nav a > span{
+  .stk-services-menu-nav a > span{
     color:#a71930;
     font-size:18px;
     font-weight:500;
@@ -753,8 +493,8 @@
     transition:transform .2s ease;
   }
 
-  .stk-home-menu-nav a:hover,
-  .stk-home-menu-nav a:focus-visible{
+  .stk-services-menu-nav a:hover,
+  .stk-services-menu-nav a:focus-visible{
     color:#8d1228 !important;
     background:rgba(167,25,48,.07);
     border-color:rgba(167,25,48,.10);
@@ -762,12 +502,10 @@
     outline:none;
   }
 
-  .stk-home-menu-nav a:hover > span,
-  .stk-home-menu-nav a:focus-visible > span{
-    transform:translateX(3px);
-  }
+  .stk-services-menu-nav a:hover > span,
+  .stk-services-menu-nav a:focus-visible > span{transform:translateX(3px)}
 
-  .stk-home-menu-nav a.is-active{
+  .stk-services-menu-nav a.is-active{
     color:#a71930 !important;
     font-weight:700;
     background:rgba(167,25,48,.08);
@@ -775,7 +513,7 @@
     transform:translateX(3px);
   }
 
-  .stk-home-menu-nav a.is-active::before{
+  .stk-services-menu-nav a.is-active::before{
     content:"";
     position:absolute;
     left:0;
@@ -787,7 +525,7 @@
     background:linear-gradient(180deg,#a71930,#c8a04a);
   }
 
-  .stk-home-menu-actions{
+  .stk-services-menu-actions{
     display:grid !important;
     grid-template-columns:1fr 1fr;
     gap:10px !important;
@@ -797,7 +535,7 @@
     border-top:1px solid rgba(116,16,32,.10);
   }
 
-  .stk-home-menu-actions a{
+  .stk-services-menu-actions a{
     min-height:48px;
     box-sizing:border-box;
     display:flex;
@@ -809,26 +547,26 @@
     text-decoration:none;
   }
 
-  .stk-home-demo-btn{
+  .stk-services-demo-btn{
     gap:8px;
     color:#fff !important;
     background:#a71930;
     box-shadow:0 9px 22px rgba(167,25,48,.18);
   }
 
-  .stk-home-demo-btn span{
+  .stk-services-demo-btn span:last-child{
     font-size:17px;
     line-height:1;
     font-weight:500;
   }
 
-  .stk-home-sign-btn{
+  .stk-services-sign-btn{
     color:#741020 !important;
     background:rgba(255,255,255,.72);
     border:1px solid rgba(116,16,32,.18);
   }
 
-  .stk-home-menu-foot{
+  .stk-services-menu-foot{
     flex:0 0 auto;
     margin-top:14px;
     text-align:center;
@@ -836,223 +574,116 @@
     font:500 10px/1.4 Inter,sans-serif;
     letter-spacing:.04em;
   }
+}
 
-  /* Old desktop/header layers cannot intercept the open menu. */
-  body:has(.stk-home-menu.is-open) .site-header{
-    pointer-events:none !important;
+@media (max-width:390px){
+  .stk-services-menu{padding:10px 9px !important}
+  .stk-services-menu-card{padding:18px 15px 16px;border-radius:18px}
+  .stk-services-menu-head{margin-bottom:16px}
+  .stk-services-menu-mark.stackly-logo-webp{width:145px !important}
+  .stk-services-menu-nav a{min-height:47px;padding:10px 11px !important;font-size:15px !important}
+  .stk-services-menu-actions{margin-top:12px !important;padding-top:12px}
+  .stk-services-menu-actions a{min-height:45px;font-size:12px}
+  .stk-services-menu-foot{margin-top:10px;font-size:9px}
+}
+
+@media (max-width:767px){
+  .site-header .brand .stackly-logo-webp{
+    width:160px !important;
+    height:auto !important;
+    flex:0 0 auto !important;
+    max-width:none !important;
   }
 }
 
 @media (max-width:390px){
-  .stk-home-menu{
-    padding:10px 9px !important;
-  }
-
-  .stk-home-menu-card{
-    padding:18px 15px 16px;
-    border-radius:18px;
-  }
-
-  .stk-home-menu-head{
-    margin-bottom:16px;
-  }
-
-  .stk-home-menu-mark{
-    width:34px;
-    height:34px;
-    flex-basis:34px;
-  }
-
-  .stk-home-menu-brand > span{
-    font-size:21px;
-  }
-
-  .stk-home-menu-nav a{
-    min-height:47px;
-    padding:10px 11px !important;
-    font-size:15px !important;
-  }
-
-  .stk-home-menu-actions{
-    margin-top:12px !important;
-    padding-top:12px;
-  }
-
-  .stk-home-menu-actions a{
-    min-height:45px;
-    font-size:12px;
-  }
-
-  .stk-home-menu-foot{
-    margin-top:10px;
-    font-size:9px;
-  }
+  .site-header .brand .stackly-logo-webp{width:145px !important}
 }
 
 @media (min-width:768px){
-  .stk-home-trigger,
-  .stk-home-menu{
-    display:none !important;
-  }
-}
-<style id="stackly-home-active-only-final">
-@media (max-width:767px){
-  /* HOME PAGE: only Home is allowed to have active styling. */
-  .stk-home-menu-nav a.is-active{
-    color:#a71930 !important;
-    font-weight:700 !important;
-    background:rgba(167,25,48,.08) !important;
-    border-color:rgba(167,25,48,.12) !important;
-    transform:translateX(3px) !important;
-  }
-  .stk-home-menu-nav a:not(:first-child){
-    color:#2a211e !important;
-    font-weight:600 !important;
-    background:transparent !important;
-    border-color:transparent !important;
-    transform:none !important;
-  }
-  .stk-home-menu-nav a:not(:first-child)::before{
-    display:none !important;
-  }
-}
-</style>
-
-</style>
-
-
-<style id="stackly-home-hamburger-final-fix">
-/* =========================================================
-   HOME PAGE MOBILE MENU — FINAL ACTIVE-STATE FIX
-   Only Home is allowed to look active.
-   Other menu items must never look like an active card on
-   hover/focus either.
-   ========================================================= */
-
-/* Home: the only active item */
-.stk-home-menu-nav a[href="index.html"].is-active,
-.stk-home-menu-nav a[href="index.html"][aria-current="page"]{
-  color:#a71930 !important;
-  font-weight:700 !important;
-  background:rgba(167,25,48,.08) !important;
-  border-color:rgba(167,25,48,.12) !important;
-  transform:translateX(3px) !important;
+  .stk-services-trigger,
+  .stk-services-menu{display:none !important}
 }
 
-/* Absolutely neutralize active states on every other item. */
-.stk-home-menu-nav a:not([href="index.html"]).is-active,
-.stk-home-menu-nav a:not([href="index.html"])[aria-current="page"]{
-  color:#2a211e !important;
-  font-weight:600 !important;
-  background:transparent !important;
-  border-color:transparent !important;
-  transform:none !important;
-}
-
-.stk-home-menu-nav a:not([href="index.html"]).is-active::before,
-.stk-home-menu-nav a:not([href="index.html"])[aria-current="page"]::before{
-  display:none !important;
-  content:none !important;
-}
-
-/* IMPORTANT: hover/focus on Products, Solutions, Resources, etc.
-   must NOT imitate the Home active card. */
-.stk-home-menu-nav a:not([href="index.html"]):hover,
-.stk-home-menu-nav a:not([href="index.html"]):focus-visible{
-  color:#2a211e !important;
-  background:transparent !important;
-  border-color:transparent !important;
-  transform:none !important;
-  outline:none !important;
-}
-
-/* Keep only the arrow's small movement on non-home items. */
-.stk-home-menu-nav a:not([href="index.html"]):hover > span,
-.stk-home-menu-nav a:not([href="index.html"]):focus-visible > span{
-  transform:translateX(3px) !important;
-}
-
-/* Home may still have its intended hover/focus treatment. */
-.stk-home-menu-nav a[href="index.html"]:hover,
-.stk-home-menu-nav a[href="index.html"]:focus-visible{
-  color:#a71930 !important;
-}
-</style>
-
-<style id="stackly-customer-stories-people-fix">
-/* =========================================================
-   STACKLY — CUSTOMER STORIES PEOPLE IMAGES
-   Replaces initials with premium circular customer portraits.
-   ========================================================= */
-.t-ava{width:68px!important;height:68px!important;min-width:68px!important;border-radius:50%!important;overflow:hidden!important;position:relative;flex:0 0 68px;background:linear-gradient(135deg,#a71930,#c8a04a);border:2px solid rgba(200,160,74,.42);box-shadow:0 10px 26px rgba(74,18,30,.16)}
-.t-ava img{display:block!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center top!important;transition:transform .45s cubic-bezier(.2,.7,.2,1),filter .35s ease}
-.t-card:hover .t-ava img{transform:scale(1.07);filter:saturate(1.05) contrast(1.02)}
-.t-ava::after{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(255,255,255,.24);pointer-events:none}
-@media(max-width:767px){.t-ava{width:58px!important;height:58px!important;min-width:58px!important;flex-basis:58px}}
-</style>
-
-
-<style id="stackly-webp-logo-final">
-/* =========================================================
-   STACKLY — ONE LOGO EVERYWHERE
-   Put your WebP at: assets/images/logo.webp
-   The same logo is used in the header, mobile menu,
-   dashboard mockup, preloader and footer.
-   Color matches the Request Demo button: #A71930.
-   ========================================================= */
+/* Finalized logo treatment */
 .stackly-logo-webp{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  object-position:center;
-  filter:
-    brightness(0)
-    saturate(100%)
-    invert(18%)
-    sepia(55%)
-    saturate(2814%)
-    hue-rotate(337deg)
-    brightness(83%)
-    contrast(94%);
+  width:180px !important;
+  height:auto !important;
+  max-width:none !important;
+  flex:0 0 auto !important;
+  display:block !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  background:transparent !important;
+  border:0 !important;
+  border-radius:0 !important;
+  filter:brightness(0) saturate(100%) invert(17%) sepia(78%) saturate(2544%) hue-rotate(340deg) brightness(83%) contrast(99%);
 }
-
-/* Header / footer logo mark */
-.site-header .brand .stackly-logo-webp,
+.pl-logo .stackly-logo-webp{
+  width:42px !important;
+  height:42px !important;
+  flex:0 0 42px !important;
+}
+.site-header .brand .stackly-logo-webp{
+  width:180px !important;
+  height:auto !important;
+  flex:0 0 auto !important;
+}
 .site-footer .brand .stackly-logo-webp{
-  width:38px;
-  height:38px;
-  flex:0 0 38px;
+  width:180px !important;
+  height:auto !important;
+  flex:0 0 auto !important;
 }
+</style>
 
-/* Preloader */
-.preloader .pl-logo .stackly-logo-webp{
-  width:48px;
-  height:48px;
+<style id="stackly-home-active-final">
+.site-header .main-nav > li > a.stk-home-nav{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:max-content !important;
+  min-width:max-content !important;
+  max-width:none !important;
+  flex:0 0 auto !important;
+  white-space:nowrap !important;
+  word-break:keep-all !important;
+  overflow-wrap:normal !important;
+  line-height:1 !important;
+  padding:10px 2px !important;
+  position:relative !important;
+  text-decoration:none !important;
+  color:#2a211e !important;
+  transition:color .25s ease,transform .25s ease !important;
 }
-
-/* Dashboard mockup */
-.ms-logo .stackly-logo-webp{
-  width:38px;
-  height:38px;
-  flex:0 0 38px;
+.site-header .main-nav > li > a.stk-home-nav::after{
+  content:"" !important;
+  position:absolute !important;
+  left:0 !important;
+  right:0 !important;
+  bottom:2px !important;
+  height:2px !important;
+  border-radius:999px !important;
+  background:#a71930 !important;
+  transform:scaleX(0) !important;
+  transform-origin:center !important;
+  transition:transform .25s ease !important;
 }
-
-/* Mobile menu */
-.stk-home-menu-mark.stackly-logo-webp{
-  width:38px;
-  height:38px;
-  flex:0 0 38px;
+.site-header .main-nav > li > a.stk-home-nav:hover{
+  color:#a71930 !important;
+  transform:translateY(-1px) !important;
 }
-
-@media(max-width:390px){
-  .stk-home-menu-mark.stackly-logo-webp{
-    width:34px;
-    height:34px;
-    flex-basis:34px;
+.site-header .main-nav > li > a.stk-home-nav:hover::after{transform:scaleX(1) !important}
+.site-header .main-nav > li > a.stk-home-nav.is-active{color:#A71930 !important}
+.site-header .main-nav > li > a.stk-home-nav.is-active::after{transform:scaleX(1) !important}
+@media (max-width:1100px){
+  .site-header .main-nav > li > a.stk-home-nav{
+    white-space:nowrap !important;
+    word-break:keep-all !important;
+    overflow-wrap:normal !important;
   }
 }
 </style>
+
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -1064,7 +695,7 @@
       <circle class="ring-track" cx="50" cy="50" r="46" fill="none" stroke-width="2.5"/>
       <circle class="ring-fill" cx="50" cy="50" r="46" fill="none" stroke-width="2.5"/>
     </svg>
-    <div class="pl-logo"><img class="mark stackly-logo-webp" src="assets/img/logo.webp" alt="Stackly"></div>
+    <div class="pl-logo"><img class="mark stackly-logo-webp" src="assets/img/stackly-logo.webp" alt="Stackly" aria-hidden="true"></div>
   </div>
   <div class="pl-bar"><span></span></div>
   <div class="pl-num">00</div>
@@ -1072,62 +703,64 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <a href="index.html" class="brand" aria-label="Stackly home"><img class="mark stackly-logo-webp" src="assets/img/logo.webp" alt="Stackly"><span class="wordmark">Stackly</span></a>
+    <a href="index.html" class="brand" aria-label="Stackly home">
+      <img class="mark stackly-logo-webp" src="assets/img/stackly-logo.webp" alt="Stackly" aria-hidden="true">
+    </a>
     <nav aria-label="Primary">
       <ul class="main-nav">
-        <li><a href="index.html" class="nav-home">Home</a></li>
-        <li>
-          <a href="product.html">Products <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><use href="#i-chevron"/></svg></a>
-        </li>
-        <li>
-          <a href="services.html">Solutions <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><use href="#i-chevron"/></svg></a>
-        </li>
-        <li>
-          <a href="blog.html">Resources <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><use href="#i-chevron"/></svg></a>
-        </li>
+        <li><a href="index.html" class="nav-home stk-home-nav is-active" aria-current="page">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="services.html">Solutions</a></li>
+        <li><a href="blog.html">Resources</a></li>
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact </a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
     <div class="header-actions">
-      <button class="lang-select" aria-label="Change language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-globe"/></svg><b>EN</b><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><use href="#i-chevron"/></svg></button>
-      <a href="login.html" class="btn btn-primary btn-sm"><span>Request a Demo</span><svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
-      <button class="stk-home-trigger" type="button" aria-label="Open menu" aria-expanded="false">
-  <span></span><span></span><span></span>
-</button>
+      <button class="lang-select" aria-label="Change language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-globe"/></svg>
+        <b>EN</b>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><use href="#i-chevron"/></svg>
+      </button>
+      <a href="login.html" class="btn btn-primary btn-sm">
+        <span>Request a Demo</span>
+        <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg>
+      </a>
+      <button class="stk-services-trigger" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
-<div class="stk-home-menu" aria-label="Mobile navigation" aria-hidden="true">
-  <div class="stk-home-menu-card">
-    <div class="stk-home-menu-head">
-      <a href="index.html" class="stk-home-menu-brand" aria-label="Stackly home">
-        <img class="stk-home-menu-mark stackly-logo-webp" src="assets/img/logo.webp" alt="Stackly">
-        <span>Stackly</span>
-      </a>
 
-      <button class="stk-home-menu-close" type="button" aria-label="Close menu">
+<div class="stk-services-menu" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="stk-services-menu-card">
+    <div class="stk-services-menu-head">
+      <a href="index.html" class="stk-services-menu-brand" aria-label="Stackly home">
+        <img class="stk-services-menu-mark stackly-logo-webp" src="assets/img/stackly-logo.webp" alt="Stackly">
+      </a>
+      <button class="stk-services-menu-close" type="button" aria-label="Close menu">
         <span></span><span></span>
       </button>
     </div>
 
-    <nav class="stk-home-menu-nav" aria-label="Mobile primary navigation">
+    <nav class="stk-services-menu-nav" aria-label="Mobile primary navigation">
       <a href="index.html" class="is-active" aria-current="page">Home<span aria-hidden="true">→</span></a>
       <a href="product.html">Products<span aria-hidden="true">→</span></a>
-      <a href="services.html">Solutions<span aria-hidden="true">→</span></a>
+      <a href="services.html">Services<span aria-hidden="true">→</span></a>
       <a href="blog.html">Resources<span aria-hidden="true">→</span></a>
       <a href="pricing.html">Pricing<span aria-hidden="true">→</span></a>
       <a href="about.html">About Us<span aria-hidden="true">→</span></a>
       <a href="contact.html">Contact<span aria-hidden="true">→</span></a>
     </nav>
 
-    <div class="stk-home-menu-actions">
-      <a href="login.html" class="stk-home-demo-btn">Request a Demo<span aria-hidden="true">→</span></a>
-      <a href="register.html" class="stk-home-sign-btn">Sign In</a>
+    <div class="stk-services-menu-actions">
+      <a href="login.html" class="stk-services-demo-btn"><span>Request a Demo</span><span aria-hidden="true">→</span></a>
+      <a href="register.html" class="stk-services-sign-btn">Sign In</a>
     </div>
 
-    <div class="stk-home-menu-foot">&copy; <span data-year>2026</span> Stackly Enterprise. All rights reserved.</div>
+    <div class="stk-services-menu-foot">&copy; <span data-year>2026</span> Stackly Enterprise. All rights reserved.</div>
   </div>
 </div>
 <div class="search-overlay" role="dialog" aria-label="Search Stackly">
@@ -1175,7 +808,6 @@
             <div class="laptop-screen">
               <div class="mdash">
                 <aside class="mdash-side">
-                  <div class="ms-logo"><img class="mark stackly-logo-webp" src="assets/img/logo.webp" alt="Stackly"><span>Stackly</span></div>
                   <div class="ms-item on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-grid"/></svg><span>Dashboard</span></div>
                   <div class="ms-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-briefcase"/></svg><span>Projects</span></div>
                   <div class="ms-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check"/></svg><span>Tasks</span></div>
@@ -1263,42 +895,42 @@
       <div class="sc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-layers"/></svg></div>
       <h3>Enterprise Resource Planning</h3>
       <p>Unify finance, inventory, HR and supply chain in a single real-time system of record built for scale.</p>
-      <a href="services.html" class="link-arrow">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
+      <a href="404.html" class="link-arrow">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
     </article>
         <article class="service-card" data-stackly-reveal="fade-up">
       <span class="sc-num">02</span>
       <div class="sc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-chart"/></svg></div>
       <h3>Business Intelligence</h3>
       <p>Turn raw data into board-ready insight with live dashboards, forecasting and self-serve analytics.</p>
-      <a href="services.html" class="link-arrow">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
+      <a href="404.html" class="link-arrow">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
     </article>
         <article class="service-card" data-stackly-reveal="fade-up">
       <span class="sc-num">03</span>
       <div class="sc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-bolt"/></svg></div>
       <h3>Workflow Automation</h3>
       <p>Design, deploy and monitor automated processes across every department — no code required.</p>
-      <a href="services.html" class="link-arrow">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
+      <a href="404.html" class="link-arrow">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
     </article>
         <article class="service-card" data-stackly-reveal="fade-up">
       <span class="sc-num">04</span>
       <div class="sc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-users"/></svg></div>
       <h3>Customer Management</h3>
       <p>A complete 360&deg; view of every customer relationship, from first touch to renewal.</p>
-      <a href="services.html" class="link-arrow">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
+      <a href="404.html" class="link-arrow">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
     </article>
         <article class="service-card" data-stackly-reveal="fade-up">
       <span class="sc-num">05</span>
       <div class="sc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-coins"/></svg></div>
       <h3>Financial Operations</h3>
       <p>Close books faster with automated invoicing, multi-entity consolidation and audit-ready trails.</p>
-      <a href="services.html" class="link-arrow">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
+      <a href="404.html" class="link-arrow">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
     </article>
         <article class="service-card" data-stackly-reveal="fade-up">
       <span class="sc-num">06</span>
       <div class="sc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-cloud"/></svg></div>
       <h3>Team Collaboration</h3>
       <p>Projects, docs and conversations in one place — purpose-built for distributed enterprise teams.</p>
-      <a href="services.html" class="link-arrow">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
+      <a href="404.html" class="link-arrow">Explore <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
     </article>
       </div>
     </div>
@@ -1603,11 +1235,11 @@
 
 <footer class="site-footer">
   <div class="container">
-    <a href="index.html" class="brand" aria-label="Stackly home"><img class="mark stackly-logo-webp" src="assets/img/logo.webp" alt="Stackly"><span class="wordmark">Stackly</span></a>
+    <a href="index.html" class="brand" aria-label="Stackly home"><img class="mark stackly-logo-webp" src="assets/img/stackly-logo.webp" alt="Stackly" aria-hidden="true"><span class="wordmark"></span></a>
     <p class="footer-statement">Technology that moves <span class="accent">business</span> forward.</p>
     <div class="footer-grid">
       <div class="footer-col footer-about">
-        <h5>Stackly</h5>
+         
         <p>The all-in-one enterprise platform for operations, analytics and growth — trusted by 500+ businesses worldwide.</p>
         <div class="social-row">
           <a href="404.html" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.49 2.49 0 1 1 5 8.48a2.49 2.49 0 0 1-.02-4.98zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9z"/></svg></a>
@@ -1617,7 +1249,7 @@
       </div>
       <div class="footer-col"><h5>Solutions</h5><ul><li><a href="404.html">Enterprise Suite</a></li><li><a href="404.html">Analytics Cloud</a></li><li><a href="404.html">Automation</a></li><li><a href="404.html">Integrations</a></li></ul></div>
       <div class="footer-col"><h5>Company</h5>
-        <ul><li><a href="index.html">home</a></li><li><a href="product.html">products</a></li><li><a href="services.html">solutions</a></li><li><a href="blog.html">resources</a></li><li><a href="pricing.html">pricing</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">contact</a></li></ul></div>      <div class="footer-col"><h5>Resources</h5><ul><li><a href="404.html">Pricing</a></li><li><a href="404.html">FAQ</a></li><li><a href="404.html">Documentation</a></li><li><a href="404.html">Dashboard Demo</a></li></ul></div>
+        <ul><li><a href="index.html">Home</a></li><li><a href="product.html">Products</a></li><li><a href="services.html">Solutions</a></li><li><a href="blog.html">Resources</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li></ul></div>      <div class="footer-col"><h5>Resources</h5><ul><li><a href="404.html">Pricing</a></li><li><a href="404.html">FAQ</a></li><li><a href="404.html">Documentation</a></li><li><a href="404.html">Dashboard Demo</a></li></ul></div>
            <div class="footer-col newsletter">
   <h5>Stay Ahead</h5>
 
@@ -1628,7 +1260,7 @@
     <input
       type="text"
       class="stk-footer-email"
-      placeholder="Your work email"
+      placeholder="email"
       aria-label="Email address"
     >
 
@@ -1989,194 +1621,87 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </script>
 
-<script id="stackly-mobile-menu-controller">
+
+<script id="stackly-services-mobile-menu-controller">
 (function(){
-  'use strict';
-  function initStacklyMobileMenu(){
-    var menu=document.querySelector('.mobile-menu');
-    var button=document.querySelector('.hamburger');
-    if(!menu || !button || button.dataset.stacklyMenuBound==='1') return;
-    button.dataset.stacklyMenuBound='1';
+  function initServicesMenu(){
+    var trigger=document.querySelector('.stk-services-trigger');
+    var menu=document.querySelector('.stk-services-menu');
+    var closeButton=document.querySelector('.stk-services-menu-close');
+    if(!trigger||!menu||!closeButton||menu.dataset.stkBound==='true')return;
+    menu.dataset.stkBound='true';
 
     function setOpen(open){
-      menu.classList.toggle('open',open);
-      button.classList.toggle('is-open',open);
-      button.setAttribute('aria-expanded',open?'true':'false');
-      button.setAttribute('aria-label',open?'Close menu':'Open menu');
-      document.body.classList.toggle('stackly-menu-open',open);
-    }
-
-    /* Capture phase prevents older navigation.js handlers from creating
-       a second, conflicting mobile-menu state. */
-    button.addEventListener('click',function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      setOpen(!menu.classList.contains('open'));
-    },true);
-
-    menu.querySelectorAll('nav a, .mm-brand, .mm-actions a').forEach(function(link){
-      link.addEventListener('click',function(){
-        setOpen(false);
-      });
-    });
-
-    document.addEventListener('keydown',function(e){
-      if(e.key==='Escape' && menu.classList.contains('open')){
-        setOpen(false);
-        button.focus({preventScroll:true});
-      }
-    });
-
-    window.addEventListener('resize',function(){
-      if(window.innerWidth>=768) setOpen(false);
-    });
-
-    /* Start closed even if another script left an old class behind. */
-    setOpen(false);
-  }
-
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initStacklyMobileMenu);
-  else initStacklyMobileMenu();
-})();
-</script>
-
-
-<script id="stackly-active-nav-controller">
-(function(){
-  'use strict';
-
-  function forceHomeOnlyActive(){
-    /* Clear ALL active states first. */
-    document.querySelectorAll(
-      '.main-nav a, .mobile-menu nav a, .stk-home-menu-nav a'
-    ).forEach(function(link){
-      link.classList.remove('active', 'is-active');
-      link.removeAttribute('aria-current');
-    });
-
-    /* Home is the ONLY active navigation item on index.html. */
-    document.querySelectorAll(
-      '.main-nav a[href="index.html"], .mobile-menu nav a[href="index.html"], .stk-home-menu-nav a[href="index.html"]'
-    ).forEach(function(link){
-      link.classList.add('active');
-
-      if(link.closest('.stk-home-menu-nav')){
-        link.classList.add('is-active');
-      }
-
-      link.setAttribute('aria-current','page');
-    });
-
-    /* Safety: never allow another mobile item to retain an active state. */
-    document.querySelectorAll('.stk-home-menu-nav a:not([href="index.html"])').forEach(function(link){
-      link.classList.remove('active', 'is-active');
-      link.removeAttribute('aria-current');
-    });
-  }
-
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', forceHomeOnlyActive);
-  }else{
-    forceHomeOnlyActive();
-  }
-
-  /* Re-apply after other page scripts finish changing classes. */
-  window.addEventListener('load', forceHomeOnlyActive);
-})();
-</script>
-
-
-<script id="stackly-home-mobile-menu-controller">
-(function(){
-  'use strict';
-
-  function initStacklyHomeMobileMenu(){
-    var trigger=document.querySelector('.stk-home-trigger');
-    var menu=document.querySelector('.stk-home-menu');
-    var closeButton=document.querySelector('.stk-home-menu-close');
-
-    if(!trigger || !menu || !closeButton) return;
-
-    function openMenu(){
-      menu.classList.add('is-open');
-      menu.setAttribute('aria-hidden','false');
-      trigger.classList.add('is-open');
-      trigger.setAttribute('aria-expanded','true');
-      trigger.setAttribute('aria-label','Close menu');
-      document.documentElement.classList.add('stk-home-menu-lock');
-      document.body.classList.add('stk-home-menu-lock');
-    }
-
-    function closeMenu(){
-      menu.classList.remove('is-open');
-      menu.setAttribute('aria-hidden','true');
-      trigger.classList.remove('is-open');
-      trigger.setAttribute('aria-expanded','false');
-      trigger.setAttribute('aria-label','Open menu');
-      document.documentElement.classList.remove('stk-home-menu-lock');
-      document.body.classList.remove('stk-home-menu-lock');
+      trigger.classList.toggle('is-open',open);
+      menu.classList.toggle('is-open',open);
+      trigger.setAttribute('aria-expanded',String(open));
+      trigger.setAttribute('aria-label',open?'Close menu':'Open menu');
+      menu.setAttribute('aria-hidden',String(!open));
+      document.documentElement.classList.toggle('stk-services-menu-lock',open);
+      document.body.classList.toggle('stk-services-menu-lock',open);
     }
 
     trigger.addEventListener('click',function(e){
       e.preventDefault();
       e.stopPropagation();
-      if(menu.classList.contains('is-open')) closeMenu();
-      else openMenu();
+      setOpen(!menu.classList.contains('is-open'));
     });
 
     closeButton.addEventListener('click',function(e){
       e.preventDefault();
       e.stopPropagation();
-      closeMenu();
+      setOpen(false);
     });
 
     menu.addEventListener('click',function(e){
-      if(e.target===menu) closeMenu();
+      if(e.target===menu)setOpen(false);
     });
 
-    menu.querySelectorAll('.stk-home-menu-nav a, .stk-home-menu-brand, .stk-home-menu-actions a')
-      .forEach(function(link){
-        link.addEventListener('click',function(){
-          closeMenu();
-        });
-      });
+    menu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click',function(){setOpen(false)});
+    });
 
     document.addEventListener('keydown',function(e){
-      if(e.key==='Escape' && menu.classList.contains('is-open')){
-        closeMenu();
-      }
+      if(e.key==='Escape'&&menu.classList.contains('is-open'))setOpen(false);
     });
 
     window.addEventListener('resize',function(){
-      if(window.innerWidth>=768) closeMenu();
+      if(window.innerWidth>=768)setOpen(false);
     });
   }
 
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded',initStacklyHomeMobileMenu,{once:true});
-  }else{
-    initStacklyHomeMobileMenu();
-  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initServicesMenu);
+  else initServicesMenu();
 })();
 </script>
 
-
-<script id="stackly-home-active-state-guard">
+<script id="stackly-home-active-state-final">
 (function(){
-  'use strict';
-
-  document.addEventListener('click', function(){
-    document.querySelectorAll('.stk-home-menu-nav a:not([href="index.html"])').forEach(function(link){
-      link.classList.remove('is-active', 'active');
+  function setHomeActive(){
+    document.querySelectorAll('.site-header .main-nav a').forEach(function(link){
+      link.classList.remove('is-active','active');
+      link.removeAttribute('aria-current');
+    });
+    document.querySelectorAll('.stk-services-menu-nav a').forEach(function(link){
+      link.classList.remove('is-active','active');
       link.removeAttribute('aria-current');
     });
 
-    var home=document.querySelector('.stk-home-menu-nav a[href="index.html"]');
-    if(home){
-      home.classList.add('is-active');
-      home.setAttribute('aria-current','page');
+    var desktop=document.querySelector('.site-header .main-nav a[href="index.html"]');
+    var mobile=document.querySelector('.stk-services-menu-nav a[href="index.html"]');
+    if(desktop){
+      desktop.classList.add('stk-home-nav','is-active');
+      desktop.setAttribute('aria-current','page');
     }
-  }, true);
+    if(mobile){
+      mobile.classList.add('is-active');
+      mobile.setAttribute('aria-current','page');
+    }
+  }
+
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setHomeActive);
+  else setHomeActive();
+  window.addEventListener('load',setHomeActive);
 })();
 </script>
 

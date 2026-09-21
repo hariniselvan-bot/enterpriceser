@@ -1229,6 +1229,514 @@ textarea:focus{
   }
 </style>
 
+
+<style id="stackly-sidebar-alignment-fix">
+/* Sidebar alignment only — preserve the existing logo asset/design */
+.dashboard-sidebar{
+  padding-left:14px !important;
+  padding-right:14px !important;
+}
+
+.dashboard-brand{
+  width:100% !important;
+  min-height:58px !important;
+  padding:5px 10px 20px !important;
+  gap:12px !important;
+  align-items:center !important;
+}
+
+.dashboard-brand-mark.stackly-dashboard-logo{
+  width:48px !important;
+  height:48px !important;
+  flex:0 0 48px !important;
+  margin:0 !important;
+  object-fit:contain !important;
+  object-position:center !important;
+}
+
+.dashboard-brand strong{
+  line-height:1.1 !important;
+  margin:0 !important;
+}
+
+.dashboard-role{
+  width:calc(100% - 16px) !important;
+  margin:0 8px 18px !important;
+  padding:12px 12px !important;
+}
+
+.dashboard-nav{
+  width:100% !important;
+}
+
+.dashboard-nav button{
+  width:100% !important;
+  min-height:44px !important;
+  padding:10px 12px !important;
+  margin:2px 0 !important;
+  align-items:center !important;
+}
+
+.nav-icon{
+  width:28px !important;
+  height:28px !important;
+  flex:0 0 28px !important;
+  margin:0 !important;
+}
+
+.sidebar-bottom{
+  width:100% !important;
+  padding-top:13px !important;
+}
+
+.profile-mini{
+  width:100% !important;
+  min-height:50px !important;
+  padding:9px !important;
+  gap:10px !important;
+  align-items:center !important;
+}
+
+.profile-avatar{
+  width:36px !important;
+  height:36px !important;
+  flex:0 0 36px !important;
+  margin:0 !important;
+}
+
+.profile-mini div{
+  min-width:0 !important;
+  flex:1 1 auto !important;
+}
+
+.sidebar-signout{
+  width:100% !important;
+  min-height:40px !important;
+  margin-top:9px !important;
+}
+
+/* Keep mobile sidebar internally aligned too */
+@media(max-width:760px){
+  .dashboard-brand{
+    padding-left:10px !important;
+    padding-right:10px !important;
+  }
+  .dashboard-brand-mark.stackly-dashboard-logo{
+    width:48px !important;
+    height:48px !important;
+    flex-basis:48px !important;
+  }
+}
+</style>
+
+
+<style id="stackly-logo-theme-size">
+.dashboard-brand{
+  align-items:center !important;
+  gap:12px !important;
+  min-height:64px !important;
+}
+
+.dashboard-brand-link{
+  width:58px !important;
+  height:58px !important;
+  flex:0 0 58px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:14px !important;
+  background:rgba(255,250,240,.08) !important;
+  border:1px solid rgba(201,162,39,.28) !important;
+  box-shadow:0 8px 22px rgba(0,0,0,.16) !important;
+}
+
+.dashboard-brand-mark.stackly-dashboard-logo{
+  width:52px !important;
+  height:52px !important;
+  flex:0 0 52px !important;
+  margin:0 !important;
+  object-fit:contain !important;
+  object-position:center !important;
+}
+
+.dashboard-brand-link:hover{
+  border-color:var(--gold) !important;
+  background:rgba(201,162,39,.12) !important;
+  transform:translateY(-1px);
+}
+
+@media(max-width:760px){
+  .dashboard-brand-link{
+    width:56px !important;
+    height:56px !important;
+    flex-basis:56px !important;
+  }
+  .dashboard-brand-mark.stackly-dashboard-logo{
+    width:50px !important;
+    height:50px !important;
+    flex-basis:50px !important;
+  }
+}
+</style>
+
+
+<script id="stackly-404-routing">
+document.addEventListener('click', function(event) {
+  const target = event.target.closest('[data-404-link="true"]');
+  if (!target) return;
+  event.preventDefault();
+  event.stopPropagation();
+  window.location.href = '404.html';
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const logo = document.querySelector('.dashboard-brand-link');
+  if (logo) {
+    logo.addEventListener('click', function(event) {
+      event.preventDefault();
+
+      const overviewButton = document.querySelector(
+        '.dashboard-nav button[data-section="overview"]'
+      );
+
+      if (overviewButton) {
+        overviewButton.click();
+      } else {
+        window.location.hash = 'overview';
+      }
+
+      const scrollArea = document.getElementById('dashboardScroll');
+      if (scrollArea) scrollArea.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+
+<style id="stackly-header-sidebar-polish">
+/* Clean Stackly branding */
+.dashboard-brand{
+  padding:6px 10px 22px !important;
+  gap:12px !important;
+  align-items:center !important;
+}
+
+.dashboard-brand-link{
+  width:64px !important;
+  height:52px !important;
+  flex:0 0 64px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  transform:none !important;
+}
+
+.dashboard-brand-link:hover{
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  transform:none !important;
+}
+
+.dashboard-brand-mark.stackly-dashboard-logo{
+  width:60px !important;
+  height:48px !important;
+  flex:0 0 60px !important;
+  object-fit:contain !important;
+  object-position:left center !important;
+  margin:0 !important;
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(17%)
+    sepia(78%)
+    saturate(2544%)
+    hue-rotate(340deg)
+    brightness(83%)
+    contrast(99%) !important;
+}
+
+.dashboard-brand strong{
+  color:var(--ivory) !important;
+  font-size:20px !important;
+  line-height:1.1 !important;
+}
+
+/* Human/user icon in sidebar */
+.profile-avatar{
+  width:38px !important;
+  height:38px !important;
+  flex:0 0 38px !important;
+  display:grid !important;
+  place-items:center !important;
+  border-radius:11px !important;
+  font-size:20px !important;
+  line-height:1 !important;
+  background:linear-gradient(135deg,var(--cherry),var(--gold)) !important;
+  color:var(--ivory) !important;
+}
+
+/* Human/user icon in header */
+.header-avatar{
+  width:32px !important;
+  height:32px !important;
+  flex:0 0 32px !important;
+  display:grid !important;
+  place-items:center !important;
+  border-radius:9px !important;
+  font-size:17px !important;
+  line-height:1 !important;
+  background:linear-gradient(135deg,var(--cherry),var(--gold)) !important;
+  color:var(--ivory) !important;
+}
+
+/* Header account area stays clean after removing unwanted action buttons */
+.header-right{
+  gap:0 !important;
+}
+
+.header-user{
+  padding:5px 10px 5px 5px !important;
+  gap:9px !important;
+  border-color:rgba(143,21,55,.14) !important;
+  background:rgba(255,250,240,.92) !important;
+}
+
+@media(max-width:760px){
+  .dashboard-brand{
+    padding:5px 10px 20px !important;
+  }
+  .dashboard-brand-link{
+    width:58px !important;
+    height:48px !important;
+    flex-basis:58px !important;
+  }
+  .dashboard-brand-mark.stackly-dashboard-logo{
+    width:54px !important;
+    height:44px !important;
+    flex-basis:54px !important;
+  }
+  .header-right{
+    gap:0 !important;
+  }
+}
+</style>
+
+
+<style id="stackly-entrepreneur-visual-polish">
+/* =========================================================
+   ENTREPRENEUR DASHBOARD — SIDEBAR / PROFILE POLISH ONLY
+   Existing structure, colors, content and behavior preserved.
+   ========================================================= */
+
+/* Larger, cleaner Stackly wordmark */
+.dashboard-brand{
+  width:100% !important;
+  min-height:78px !important;
+  padding:8px 10px 20px !important;
+  gap:0 !important;
+  align-items:center !important;
+}
+.dashboard-brand-link{
+  width:100% !important;
+  height:62px !important;
+  flex:1 1 auto !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  overflow:hidden !important;
+}
+.dashboard-brand-mark.stackly-dashboard-logo{
+  width:150px !important;
+  height:58px !important;
+  max-width:100% !important;
+  flex:0 1 auto !important;
+  object-fit:contain !important;
+  object-position:left center !important;
+  margin:0 !important;
+}
+
+/* Consistent modern outline icon system */
+.dashboard-nav button{
+  min-height:46px !important;
+  padding:8px 10px !important;
+  margin:3px 0 !important;
+  gap:10px !important;
+  border-radius:12px !important;
+}
+.nav-icon{
+  width:36px !important;
+  height:36px !important;
+  flex:0 0 36px !important;
+  display:grid !important;
+  place-items:center !important;
+  border:1px solid rgba(255,250,240,.08) !important;
+  border-radius:11px !important;
+  background:rgba(255,250,240,.055) !important;
+  color:rgba(255,250,240,.82) !important;
+  font-size:0 !important;
+}
+.nav-icon svg{
+  width:18px !important;
+  height:18px !important;
+  display:block !important;
+  fill:none !important;
+  stroke:currentColor !important;
+  stroke-width:1.7 !important;
+  stroke-linecap:round !important;
+  stroke-linejoin:round !important;
+}
+.dashboard-nav button:hover .nav-icon,
+.dashboard-nav button.active .nav-icon{
+  color:var(--ivory) !important;
+  border-color:rgba(201,162,39,.28) !important;
+  background:rgba(201,162,39,.12) !important;
+}
+.nav-count{
+  margin-left:auto !important;
+  min-width:23px !important;
+  padding:4px 6px !important;
+  line-height:1 !important;
+  flex:0 0 auto !important;
+}
+
+/* Bottom entrepreneur profile */
+.sidebar-bottom{
+  padding-top:15px !important;
+}
+.profile-mini{
+  min-height:58px !important;
+  padding:8px 10px !important;
+  gap:11px !important;
+  border:1px solid rgba(201,162,39,.16) !important;
+  border-radius:13px !important;
+  background:rgba(255,250,240,.06) !important;
+}
+.profile-avatar{
+  width:42px !important;
+  height:42px !important;
+  flex:0 0 42px !important;
+  border-radius:12px !important;
+  display:grid !important;
+  place-items:center !important;
+  font-size:0 !important;
+}
+.profile-avatar svg{
+  width:20px !important;
+  height:20px !important;
+  display:block !important;
+  fill:none !important;
+  stroke:currentColor !important;
+  stroke-width:1.8 !important;
+  stroke-linecap:round !important;
+  stroke-linejoin:round !important;
+}
+.profile-mini b{
+  font-size:10px !important;
+  line-height:1.2 !important;
+}
+.profile-mini span{
+  font-size:8px !important;
+  line-height:1.25 !important;
+}
+
+/* Sign out */
+.sidebar-signout{
+  min-height:42px !important;
+  margin-top:10px !important;
+  gap:8px !important;
+  border-radius:12px !important;
+  justify-content:center !important;
+}
+.sidebar-signout .signout-icon{
+  width:20px !important;
+  height:20px !important;
+  display:grid !important;
+  place-items:center !important;
+  font-size:0 !important;
+}
+.sidebar-signout .signout-icon svg{
+  width:17px !important;
+  height:17px !important;
+  display:block !important;
+  fill:none !important;
+  stroke:currentColor !important;
+  stroke-width:1.8 !important;
+  stroke-linecap:round !important;
+  stroke-linejoin:round !important;
+}
+
+/* Header entrepreneur profile */
+.header-user{
+  min-height:42px !important;
+  padding:5px 11px 5px 6px !important;
+  gap:9px !important;
+  border-radius:12px !important;
+}
+.header-avatar{
+  width:34px !important;
+  height:34px !important;
+  flex:0 0 34px !important;
+  border-radius:10px !important;
+  font-size:0 !important;
+}
+.header-avatar svg{
+  width:18px !important;
+  height:18px !important;
+  display:block !important;
+  fill:none !important;
+  stroke:currentColor !important;
+  stroke-width:1.8 !important;
+  stroke-linecap:round !important;
+  stroke-linejoin:round !important;
+}
+.header-user b{font-size:9px !important;line-height:1.2 !important}
+.header-user span{font-size:8px !important;line-height:1.2 !important}
+
+/* Only explicitly marked unavailable elements go to the existing 404 page. */
+[data-404-link="true"]{cursor:pointer !important}
+
+/* Responsive: preserve the mobile sidebar behavior and keep the logo visible. */
+@media(max-width:760px){
+  .dashboard-brand{
+    min-height:76px !important;
+    padding:7px 10px 18px !important;
+  }
+  .dashboard-brand-link{
+    height:58px !important;
+  }
+  .dashboard-brand-mark.stackly-dashboard-logo{
+    width:145px !important;
+    height:54px !important;
+  }
+  .dashboard-nav button{
+    min-height:46px !important;
+  }
+  .nav-icon{
+    width:36px !important;
+    height:36px !important;
+    flex-basis:36px !important;
+  }
+  .profile-mini{
+    min-height:56px !important;
+  }
+  .profile-avatar{
+    width:42px !important;
+    height:42px !important;
+    flex-basis:42px !important;
+  }
+  .header-avatar{
+    width:34px !important;
+    height:34px !important;
+    flex-basis:34px !important;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -1236,8 +1744,7 @@ textarea:focus{
 
 <aside class="dashboard-sidebar" id="dashboardSidebar">
   <div class="dashboard-brand">
-    <img class="dashboard-brand-mark stackly-dashboard-logo" src="assets/img/logo.webp" alt="Stackly">
-    <strong>Stackly</strong>
+    <a href="#overview" class="dashboard-brand-link" aria-label="Stackly Dashboard Overview"><img class="dashboard-brand-mark stackly-dashboard-logo" src="assets/img/stackly-logo.webp" alt="Stackly"></a>
   </div>
 
   <div class="dashboard-role">
@@ -1247,30 +1754,30 @@ textarea:focus{
 
   <nav class="dashboard-nav" id="dashboardNav">
     <div class="nav-heading">Overview</div>
-    <button class="active" data-section="overview"><span class="nav-icon">⌂</span>Overview</button>
-    <button data-section="analytics"><span class="nav-icon">◒</span>Analytics</button>
-    <button data-section="revenue"><span class="nav-icon">↗</span>Revenue</button>
+    <button class="active" data-section="overview"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.8 12 3.7l8.5 7.1"/><path d="M5.5 9.6v10.2h13V9.6"/><path d="M9.5 19.8v-5.5h5v5.5"/></svg></span>Overview</button>
+    <button data-section="analytics"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m7 15 3-4 3 2 5-6"/></svg></span>Analytics</button>
+    <button data-section="revenue"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 18 18 5"/><path d="M9 5h9v9"/></svg></span>Revenue</button>
 
     <div class="nav-heading">Business</div>
-    <button data-section="projects"><span class="nav-icon">▦</span>Projects<span class="nav-count">8</span></button>
-    <button data-section="clients"><span class="nav-icon">♙</span>Clients<span class="nav-count">24</span></button>
-    <button data-section="team"><span class="nav-icon">♧</span>Team<span class="nav-count">12</span></button>
-    <button data-section="tasks"><span class="nav-icon">✓</span>Tasks<span class="nav-count">17</span></button>
+    <button data-section="projects"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg></span>Projects<span class="nav-count">8</span></button>
+    <button data-section="clients"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 19c.8-3.2 3.1-5 6.5-5s5.7 1.8 6.5 5"/></svg></span>Clients<span class="nav-count">24</span></button>
+    <button data-section="team"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="2.8"/><circle cx="16.5" cy="9" r="2.2"/><path d="M3.8 19c.7-3.3 2.6-5 5.2-5s4.5 1.7 5.2 5"/><path d="M14.5 15c2.8.1 4.7 1.4 5.2 4"/></svg></span>Team<span class="nav-count">12</span></button>
+    <button data-section="tasks"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="m8 12 2.5 2.5L16.5 8.5"/></svg></span>Tasks<span class="nav-count">17</span></button>
 
     <div class="nav-heading">Management</div>
-    <button data-section="settings"><span class="nav-icon">⚙</span>Settings</button>
+    <button data-section="settings"><span class="nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19 13.5a7.7 7.7 0 0 0 0-3l2-1.2-2-3.4-2.2.9a7.7 7.7 0 0 0-2.6-1.5L14 3h-4l-.3 2.3a7.7 7.7 0 0 0-2.6 1.5l-2.2-.9-2 3.4 2 1.2a7.7 7.7 0 0 0 0 3l-2 1.2 2 3.4 2.2-.9a7.7 7.7 0 0 0 2.6 1.5L10 21h4l.3-2.3a7.7 7.7 0 0 0 2.6-1.5l2.2.9 2-3.4z"/></svg></span>Settings</button>
   </nav>
 
   <div class="sidebar-bottom">
     <div class="profile-mini">
-      <span class="profile-avatar" id="sidebarAvatar">EN</span>
+      <span class="profile-avatar" id="sidebarAvatar" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 19c.8-3.2 3.1-5 6.5-5s5.7 1.8 6.5 5"/></svg></span>
       <div>
         <b id="sidebarName">Entrepreneur</b>
         <span id="sidebarEmail">Business account</span>
       </div>
     </div>
     <button class="sidebar-signout" id="signOutButton" type="button">
-      <span>↪</span> Sign out
+      <span class="signout-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 5h5v14h-5"/><path d="M10 12h9"/><path d="m14 8 4 4-4 4"/><path d="M19 12H5"/></svg></span> Sign out
     </button>
   </div>
 </aside>
@@ -1289,10 +1796,8 @@ textarea:focus{
   </div>
 
   <div class="header-right">
-    <button class="header-icon" aria-label="Notifications">♢<i class="notification-dot"></i></button>
-    <button class="header-icon" aria-label="Messages">✉</button>
     <div class="header-user">
-      <span class="header-avatar" id="headerAvatar">EN</span>
+      <span class="header-avatar" id="headerAvatar" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 19c.8-3.2 3.1-5 6.5-5s5.7 1.8 6.5 5"/></svg></span>
       <div>
         <b id="headerName">Entrepreneur</b>
         <span id="headerEmail">Business account</span>
@@ -1947,8 +2452,6 @@ textarea:focus{
     document.getElementById("headerName").textContent = displayName;
     document.getElementById("headerEmail").textContent = email;
     document.getElementById("overviewEmail").textContent = email;
-    document.getElementById("sidebarAvatar").textContent = initials || "EN";
-    document.getElementById("headerAvatar").textContent = initials || "EN";
     document.getElementById("settingsEmail").value = email;
   }
 
@@ -1973,5 +2476,15 @@ textarea:focus{
   showSection(titles[initial] ? initial : "overview");
 })();
 </script>
+
+<style id="force-stackly-logo-white">
+  .dashboard-brand-mark.stackly-dashboard-logo,
+  .dashboard-brand-mark.stackly-dashboard-logo img,
+  .stackly-dashboard-logo {
+    filter: brightness(0) invert(1) !important;
+    opacity: 1 !important;
+  }
+</style>
+
 </body>
 </html>

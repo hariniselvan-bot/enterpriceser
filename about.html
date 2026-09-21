@@ -604,212 +604,720 @@
 
 
 
-<style id="stackly-mobile-menu-final-fix">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style id="stackly-services-mobile-menu-isolated">
 /* =========================================================
-   STACKLY — ISOLATED MOBILE MENU
-   Deliberately uses unique class names so navigation.js or
-   other global hamburger styles cannot interfere with it.
+   STACKLY SERVICES — PREMIUM MOBILE MENU
+   Isolated class names prevent conflicts with shared menu JS/CSS.
+   Only Services is active on the Services page.
    ========================================================= */
-@media (max-width: 767px){
-  html,body{overflow-x:hidden}
-  body.stk-menu-open{overflow:hidden !important;touch-action:none}
+@media (max-width:767px){
+  html.stk-services-menu-lock,
+  body.stk-services-menu-lock{
+    overflow:hidden !important;
+    touch-action:none;
+  }
 
   .site-header{z-index:10020 !important}
 
-  .stk-mobile-trigger{
-    position:relative !important;display:flex !important;align-items:center !important;justify-content:center !important;
-    width:44px !important;height:44px !important;min-width:44px !important;flex:0 0 44px !important;
-    padding:0 !important;margin:0 !important;border:0 !important;border-radius:12px !important;
-    background:rgba(255,255,255,.94) !important;color:#8d1228 !important;
-    box-shadow:0 8px 22px rgba(44,24,18,.10) !important;cursor:pointer !important;
-    z-index:10040 !important;
-  }
-  .stk-mobile-trigger span{
-    position:absolute !important;left:12px !important;width:20px !important;height:2px !important;
-    border-radius:10px !important;background:#8d1228 !important;
-    transition:transform .28s ease,opacity .2s ease,top .28s ease !important;
-  }
-  .stk-mobile-trigger span:nth-child(1){top:14px !important}
-  .stk-mobile-trigger span:nth-child(2){top:21px !important}
-  .stk-mobile-trigger span:nth-child(3){top:28px !important}
-  .stk-mobile-trigger.is-open span:nth-child(1){top:21px !important;transform:rotate(45deg) !important}
-  .stk-mobile-trigger.is-open span:nth-child(2){opacity:0 !important}
-  .stk-mobile-trigger.is-open span:nth-child(3){top:21px !important;transform:rotate(-45deg) !important}
-
-  .stk-mobile-overlay{
-    position:fixed !important;inset:0 !important;z-index:10005 !important;
-    background:rgba(31,18,15,.28) !important;
-    backdrop-filter:blur(8px) !important;-webkit-backdrop-filter:blur(8px) !important;
-    opacity:0 !important;visibility:hidden !important;pointer-events:none !important;
-    transition:opacity .28s ease,visibility 0s linear .42s !important;
-  }
-  body.stk-menu-open .stk-mobile-overlay{
-    opacity:1 !important;visibility:visible !important;pointer-events:auto !important;
-    transition:opacity .28s ease,visibility 0s linear 0s !important;
+  .stk-services-trigger{
+    position:relative;
+    z-index:10031;
+    display:flex !important;
+    flex:0 0 44px;
+    width:44px;
+    height:44px;
+    align-items:center;
+    justify-content:center;
+    padding:0;
+    border:0;
+    border-radius:12px;
+    background:rgba(255,255,255,.94);
+    color:#8d1228;
+    box-shadow:0 8px 22px rgba(44,24,18,.10);
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
   }
 
-  .stk-mobile-panel{
+  .stk-services-trigger span{
+    position:absolute;
+    width:20px;
+    height:2px;
+    border-radius:10px;
+    background:#8d1228;
+    transition:transform .28s ease,opacity .2s ease,top .28s ease;
+  }
+  .stk-services-trigger span:nth-child(1){top:14px}
+  .stk-services-trigger span:nth-child(2){top:21px}
+  .stk-services-trigger span:nth-child(3){top:28px}
+  .stk-services-trigger.is-open span:nth-child(1){top:21px;transform:rotate(45deg)}
+  .stk-services-trigger.is-open span:nth-child(2){opacity:0}
+  .stk-services-trigger.is-open span:nth-child(3){top:21px;transform:rotate(-45deg)}
+
+  .stk-services-menu{
     position:fixed !important;
-    top:28px !important;right:20px !important;bottom:18px !important;left:30px !important;
-    width:auto !important;height:auto !important;max-height:none !important;
-    margin:0 !important;padding:14px 18px 16px !important;box-sizing:border-box !important;
-    display:flex !important;flex-direction:column !important;overflow:hidden !important;
-    z-index:10030 !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    box-sizing:border-box;
+    padding:14px 12px !important;
+    display:block !important;
+    z-index:10040 !important;
+    background:rgba(31,18,15,.28);
+    backdrop-filter:blur(9px);
+    -webkit-backdrop-filter:blur(9px);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .25s ease,visibility 0s linear .42s;
+  }
+
+  .stk-services-menu.is-open{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transition:opacity .25s ease,visibility 0s linear 0s;
+  }
+
+  .stk-services-menu-card{
+    position:relative;
+    z-index:10041;
+    width:100%;
+    height:100%;
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    padding:22px 18px 20px;
+    border:1px solid rgba(141,18,40,.13);
+    border-radius:20px;
     background:
-      radial-gradient(circle at 85% 7%,rgba(200,160,74,.13),transparent 25%),
-      linear-gradient(145deg,#fffdf9 0%,#f7f1e9 58%,#f2ece6 100%) !important;
-    border:1px solid rgba(116,16,32,.12) !important;border-radius:4px !important;
-    box-shadow:0 24px 70px rgba(44,24,18,.22) !important;
-    transform:translate3d(0,110%,0) !important;
-    opacity:0 !important;visibility:hidden !important;pointer-events:none !important;
-    transition:transform .42s cubic-bezier(.22,.8,.2,1),opacity .25s ease,visibility 0s linear .42s !important;
-  }
-  body.stk-menu-open .stk-mobile-panel{
-    transform:translate3d(0,0,0) !important;opacity:1 !important;
-    visibility:visible !important;pointer-events:auto !important;
-    transition:transform .42s cubic-bezier(.22,.8,.2,1),opacity .25s ease,visibility 0s linear 0s !important;
+      radial-gradient(circle at 88% 10%,rgba(200,160,74,.14),transparent 30%),
+      linear-gradient(145deg,#fffdf8 0%,#f8f1e7 58%,#f5eee6 100%);
+    box-shadow:0 24px 70px rgba(44,24,18,.25);
+    isolation:isolate;
+    transform:translateY(22px) scale(.985);
+    transition:transform .42s cubic-bezier(.22,.8,.2,1);
   }
 
-  .stk-mobile-close{
-    position:absolute !important;top:13px !important;right:15px !important;
-    width:45px !important;height:45px !important;padding:0 !important;
-    display:flex !important;align-items:center !important;justify-content:center !important;
-    border:1px solid rgba(116,16,32,.10) !important;border-radius:14px !important;
-    background:rgba(255,255,255,.86) !important;color:#a71930 !important;
-    box-shadow:0 7px 20px rgba(44,24,18,.10) !important;cursor:pointer !important;
-    z-index:3 !important;
-  }
-  .stk-mobile-close span{
-    position:absolute !important;width:19px !important;height:2px !important;
-    border-radius:10px !important;background:#a71930 !important;
-  }
-  .stk-mobile-close span:first-child{transform:rotate(45deg) !important}
-  .stk-mobile-close span:last-child{transform:rotate(-45deg) !important}
-
-  .stk-mobile-panel .mm-brand{
-    display:flex !important;align-items:center !important;gap:9px !important;
-    flex:0 0 auto !important;width:max-content !important;
-    margin:2px 0 25px !important;padding:0 !important;
-    color:#741020 !important;text-decoration:none !important;
-  }
-  .stk-mobile-panel .mm-brand .mark{width:38px !important;height:38px !important;flex:0 0 38px !important}
-  .stk-mobile-panel .mm-brand .wordmark{
-    font-family:Fraunces,serif !important;font-size:23px !important;font-weight:600 !important;
-    letter-spacing:-.03em !important;color:#741020 !important;
+  .stk-services-menu.is-open .stk-services-menu-card{
+    transform:translateY(0) scale(1);
   }
 
-  .stk-mobile-panel nav{
-    display:flex !important;flex:1 1 auto !important;flex-direction:column !important;
-    justify-content:center !important;gap:5px !important;min-height:0 !important;
-    margin:0 !important;padding:0 !important;
-  }
-  .stk-mobile-panel nav a{
-    position:relative !important;display:flex !important;align-items:center !important;justify-content:space-between !important;
-    width:100% !important;min-height:52px !important;padding:12px 13px !important;box-sizing:border-box !important;
-    border:1px solid transparent !important;border-radius:12px !important;
-    color:#2a211e !important;background:transparent !important;
-    font-family:Inter,sans-serif !important;font-size:16px !important;font-weight:600 !important;
-    letter-spacing:-.01em !important;text-decoration:none !important;
-    transition:background .2s ease,color .2s ease,transform .2s ease,border-color .2s ease !important;
-  }
-  .stk-mobile-panel nav a::after{
-    content:"→" !important;color:#a71930 !important;font-size:18px !important;font-weight:500 !important;
-    opacity:.72 !important;transition:transform .2s ease !important;
-  }
-  .stk-mobile-panel nav a:active,.stk-mobile-panel nav a:focus-visible{
-    color:#8d1228 !important;background:rgba(167,25,48,.07) !important;
-    border-color:rgba(167,25,48,.10) !important;outline:none !important;
-  }
-  .stk-mobile-panel nav a.active{
-    color:#a71930 !important;font-weight:700 !important;
-    background:rgba(167,25,48,.08) !important;border-color:rgba(167,25,48,.12) !important;
-  }
-  .stk-mobile-panel nav a.active::before{
-    content:"" !important;position:absolute !important;left:0 !important;top:50% !important;
-    width:4px !important;height:24px !important;border-radius:10px !important;
-    transform:translateY(-50%) !important;background:linear-gradient(180deg,#a71930,#c8a04a) !important;
+  .stk-services-menu-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex:0 0 auto;
+    margin-bottom:18px;
   }
 
-  .stk-mobile-panel .mm-actions{
-    display:grid !important;grid-template-columns:1fr 1fr !important;gap:10px !important;
-    flex:0 0 auto !important;margin:18px 0 0 !important;padding:16px 0 0 !important;
-    border-top:1px solid rgba(116,16,32,.10) !important;
+  .stk-services-menu-brand{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    width:max-content;
+    color:#741020 !important;
+    text-decoration:none !important;
   }
-  .stk-mobile-panel .mm-actions .btn{
-    width:100% !important;min-height:48px !important;padding:11px 10px !important;
-    justify-content:center !important;border-radius:12px !important;font-size:13px !important;
+
+  .stk-services-menu-mark{
+    width:38px;
+    height:38px;
+    flex:0 0 38px;
   }
-  .stk-mobile-panel .mm-actions .btn-primary{
-    background:#a71930 !important;color:#fff !important;border-color:#a71930 !important;
+
+  .stk-services-menu-brand > span{
+    font-family:Fraunces,serif;
+    font-size:23px;
+    font-weight:600;
+    letter-spacing:-.03em;
   }
-  .stk-mobile-panel .mm-actions .btn-outline{
-    background:rgba(255,255,255,.65) !important;border-color:rgba(116,16,32,.20) !important;color:#741020 !important;
+
+  .stk-services-menu-close{
+    position:relative;
+    flex:0 0 44px;
+    width:44px;
+    height:44px;
+    padding:0;
+    border:1px solid rgba(116,16,32,.12);
+    border-radius:13px;
+    background:rgba(255,255,255,.86);
+    box-shadow:0 8px 22px rgba(44,24,18,.09);
+    cursor:pointer;
   }
-  .stk-mobile-panel .mm-foot{
-    flex:0 0 auto !important;margin-top:14px !important;text-align:center !important;
-    color:rgba(42,33,30,.48) !important;font:500 10px/1.4 Inter,sans-serif !important;
-    letter-spacing:.04em !important;
+
+  .stk-services-menu-close span{
+    position:absolute;
+    left:12px;
+    top:20px;
+    width:20px;
+    height:2px;
+    border-radius:10px;
+    background:#a71930;
   }
-  body.stk-menu-open > main,body.stk-menu-open > footer,body.stk-menu-open > .to-top{
+  .stk-services-menu-close span:first-child{transform:rotate(45deg)}
+  .stk-services-menu-close span:last-child{transform:rotate(-45deg)}
+
+  .stk-services-menu-nav{
+    display:flex !important;
+    flex:1 1 auto;
+    min-height:0;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px !important;
+    margin:0 !important;
+    padding:0 !important;
+  }
+
+  .stk-services-menu-nav a{
+    position:relative;
+    display:flex !important;
+    align-items:center;
+    justify-content:space-between;
+    width:100%;
+    min-height:52px;
+    box-sizing:border-box;
+    padding:12px 13px !important;
+    border:1px solid transparent;
+    border-radius:12px;
+    color:#2a211e !important;
+    background:transparent;
+    font-family:Inter,sans-serif;
+    font-size:16px !important;
+    font-weight:600;
+    letter-spacing:-.01em;
+    text-decoration:none !important;
+    transition:background .2s ease,color .2s ease,transform .2s ease,border-color .2s ease;
+  }
+
+  .stk-services-menu-nav a > span{
+    color:#a71930;
+    font-size:18px;
+    font-weight:500;
+    opacity:.72;
+    transition:transform .2s ease;
+  }
+
+  .stk-services-menu-nav a:hover,
+  .stk-services-menu-nav a:focus-visible{
+    color:#8d1228 !important;
+    background:rgba(167,25,48,.07);
+    border-color:rgba(167,25,48,.10);
+    transform:translateX(3px);
+    outline:none;
+  }
+
+  .stk-services-menu-nav a:hover > span,
+  .stk-services-menu-nav a:focus-visible > span{
+    transform:translateX(3px);
+  }
+
+  /* ONLY SERVICES gets the permanent active state. */
+  .stk-services-menu-nav a.is-active{
+    color:#a71930 !important;
+    font-weight:700;
+    background:rgba(167,25,48,.08);
+    border-color:rgba(167,25,48,.12);
+    transform:translateX(3px);
+  }
+
+  .stk-services-menu-nav a.is-active::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    width:4px;
+    height:24px;
+    border-radius:10px;
+    transform:translateY(-50%);
+    background:linear-gradient(180deg,#a71930,#c8a04a);
+  }
+
+  .stk-services-menu-actions{
+    display:grid !important;
+    grid-template-columns:1fr 1fr;
+    gap:10px !important;
+    flex:0 0 auto;
+    margin:18px 0 0 !important;
+    padding-top:16px;
+    border-top:1px solid rgba(116,16,32,.10);
+  }
+
+  .stk-services-menu-actions a{
+    min-height:48px;
+    box-sizing:border-box;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    padding:11px 10px;
+    font:700 13px/1 Inter,sans-serif;
+    text-decoration:none;
+  }
+
+  .stk-services-demo-btn{
+    gap:8px;
+    color:#fff !important;
+    background:#a71930;
+    box-shadow:0 9px 22px rgba(167,25,48,.18);
+  }
+
+  .stk-services-demo-btn span{
+    font-size:17px;
+    line-height:1;
+    font-weight:500;
+  }
+
+  .stk-services-sign-btn{
+    color:#741020 !important;
+    background:rgba(255,255,255,.72);
+    border:1px solid rgba(116,16,32,.18);
+  }
+
+  .stk-services-menu-foot{
+    flex:0 0 auto;
+    margin-top:14px;
+    text-align:center;
+    color:rgba(42,33,30,.48);
+    font:500 10px/1.4 Inter,sans-serif;
+    letter-spacing:.04em;
+  }
+
+  body:has(.stk-services-menu.is-open) .site-header{
     pointer-events:none !important;
   }
 }
 
 @media (max-width:390px){
-  .stk-mobile-panel{top:10px !important;right:9px !important;bottom:10px !important;left:9px !important;padding:18px 15px 16px !important;border-radius:4px !important}
-  .stk-mobile-close{top:12px !important;right:12px !important;width:43px !important;height:43px !important}
-  .stk-mobile-panel .mm-brand{margin-bottom:16px !important}
-  .stk-mobile-panel .mm-brand .mark{width:34px !important;height:34px !important;flex-basis:34px !important}
-  .stk-mobile-panel .mm-brand .wordmark{font-size:21px !important}
-  .stk-mobile-panel nav a{min-height:47px !important;padding:10px 11px !important;font-size:15px !important}
-  .stk-mobile-panel .mm-actions{margin-top:12px !important;padding-top:12px !important}
-  .stk-mobile-panel .mm-actions .btn{min-height:45px !important;font-size:12px !important}
-  .stk-mobile-panel .mm-foot{margin-top:10px !important;font-size:9px !important}
+  .stk-services-menu{
+    padding:10px 9px !important;
+  }
+  .stk-services-menu-card{
+    padding:18px 15px 16px;
+    border-radius:18px;
+  }
+  .stk-services-menu-head{margin-bottom:16px}
+  .stk-services-menu-mark{
+    width:34px;
+    height:34px;
+    flex-basis:34px;
+  }
+  .stk-services-menu-brand > span{font-size:21px}
+  .stk-services-menu-nav a{
+    min-height:47px;
+    padding:10px 11px !important;
+    font-size:15px !important;
+  }
+  .stk-services-menu-actions{
+    margin-top:12px !important;
+    padding-top:12px;
+  }
+  .stk-services-menu-actions a{
+    min-height:45px;
+    font-size:12px;
+  }
+  .stk-services-menu-foot{
+    margin-top:10px;
+    font-size:9px;
+  }
 }
 
 @media (min-width:768px){
-  .stk-mobile-trigger,.stk-mobile-panel,.stk-mobile-overlay{display:none !important}
+  .stk-services-trigger,
+  .stk-services-menu{
+    display:none !important;
+  }
 }
 </style>
 
+<style id="stackly-services-mobile-menu-hard-reset">
+@media (max-width:767px){
+  .stk-services-menu,
+  .stk-services-menu *{
+    box-sizing:border-box;
+  }
+  .stk-services-menu-card,
+  .stk-services-menu-card a,
+  .stk-services-menu-card button{
+    max-width:100%;
+  }
+  .stk-services-menu-card a{
+    overflow:hidden;
+  }
+  .stk-services-menu-actions a{
+    white-space:nowrap;
+    overflow:hidden;
+  }
+  .stk-services-menu-foot{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+  }
+}
+</style>
 
-<style id="stackly-global-webp-logo">
-  /* Same WebP logo everywhere: preloader, desktop header, mobile menu and footer */
-  .stackly-logo-webp{
+<style id="stackly-services-red-isolation">
+/* =========================================================
+   STACKLY SERVICES — RED THEME ISOLATION
+   Red styling belongs ONLY to the Services page.
+   Nothing here targets generic navigation/page classes.
+   ========================================================= */
+
+body.stackly-services-page{
+  --stackly-service-red:#A71930;
+  --stackly-service-red-dark:#741020;
+  --stackly-service-gold:#C8A04A;
+}
+
+/* Services page header accents */
+body.stackly-services-page .site-header .brand .wordmark,
+body.stackly-services-page .site-header .brand .mark{
+  color:var(--stackly-service-red);
+}
+
+/* Services mobile menu: only the Services item is permanently red.
+   All other menu items stay neutral. */
+@media (max-width:767px){
+  body.stackly-services-page .stk-services-menu-nav a{
+    color:#2a211e !important;
+    background:transparent !important;
+    border-color:transparent !important;
+    transform:none !important;
+  }
+
+  body.stackly-services-page .stk-services-menu-nav a > span{
+    color:#2a211e !important;
+    opacity:.58;
+  }
+
+  body.stackly-services-page .stk-services-menu-nav a.is-active{
+    color:var(--stackly-service-red) !important;
+    background:rgba(167,25,48,.08) !important;
+    border-color:rgba(167,25,48,.12) !important;
+    transform:translateX(3px) !important;
+  }
+
+  body.stackly-services-page .stk-services-menu-nav a.is-active > span{
+    color:var(--stackly-service-red) !important;
+  }
+
+  body.stackly-services-page .stk-services-menu-nav a.is-active::before{
+    background:linear-gradient(
+      180deg,
+      var(--stackly-service-red),
+      var(--stackly-service-gold)
+    ) !important;
+  }
+
+  /* Demo button is red only inside the Services mobile menu. */
+  body.stackly-services-page .stk-services-demo-btn{
+    color:#fff !important;
+    background:var(--stackly-service-red) !important;
+    border-color:transparent !important;
+  }
+
+  body.stackly-services-page .stk-services-sign-btn{
+    color:var(--stackly-service-red-dark) !important;
+    background:rgba(255,255,255,.72) !important;
+    border-color:rgba(116,16,32,.18) !important;
+  }
+}
+
+/* Never let generic active navigation selectors turn other menu
+   items red on the Services page. */
+body.stackly-services-page .stk-services-menu-nav a:not(.is-active){
+  color:#2a211e !important;
+}
+
+/* All Services-page red/gold decorative styles remain inside
+   the Services page namespace. */
+body.stackly-services-page .services-capability-icon,
+body.stackly-services-page .services-section-eyebrow,
+body.stackly-services-page .services-process-number,
+body.stackly-services-page .services-solution-link{
+  color:var(--stackly-service-red);
+}
+</style>
+
+<style id="stackly-services-final-fix">
+/* =========================================================
+   FINAL SERVICES PAGE FIX
+   1) Request a Demo is compact on mobile.
+   2) Red theme is available ONLY when the page body is
+      .stackly-services-page.
+   3) Only Services remains active in the mobile menu.
+   ========================================================= */
+
+@media (max-width:767px){
+
+  /* Keep the entire special menu scoped to Services. */
+  body.stackly-services-page .stk-services-menu,
+  body.stackly-services-page .stk-services-menu *{
+    box-sizing:border-box;
+  }
+
+  body.stackly-services-page .stk-services-trigger{
+    color:#8d1228;
+  }
+
+  body.stackly-services-page .stk-services-trigger span{
+    background:#8d1228;
+  }
+
+  /* Neutral by default — no red active state for other links. */
+  body.stackly-services-page .stk-services-menu-nav a{
+    color:#2a211e !important;
+    background:transparent !important;
+    border-color:transparent !important;
+    transform:none !important;
+  }
+
+  body.stackly-services-page .stk-services-menu-nav a > span{
+    color:#2a211e !important;
+    opacity:.55;
+  }
+
+  /* ONLY Services is active/red. */
+  body.stackly-services-page .stk-services-menu-nav a.is-active{
+    color:#A71930 !important;
+    background:rgba(167,25,48,.08) !important;
+    border-color:rgba(167,25,48,.12) !important;
+    transform:translateX(3px) !important;
+    font-weight:700;
+  }
+
+  body.stackly-services-page .stk-services-menu-nav a.is-active > span{
+    color:#A71930 !important;
+    opacity:1;
+  }
+
+  body.stackly-services-page .stk-services-menu-nav a.is-active::before{
+    background:linear-gradient(180deg,#A71930,#C8A04A) !important;
+  }
+
+  /* ------------------------------
+     Request a Demo — FIXED SIZE
+     ------------------------------ */
+  body.stackly-services-page .stk-services-menu-actions{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+    gap:10px !important;
+    width:100% !important;
+  }
+
+  body.stackly-services-page .stk-services-menu-actions a{
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+    min-height:46px !important;
+    height:46px !important;
+    padding:10px 10px !important;
+    border-radius:11px !important;
+    box-sizing:border-box !important;
+    font:600 12px/1 Inter,sans-serif !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+  }
+
+  body.stackly-services-page .stk-services-demo-btn{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:6px !important;
+    color:#fff !important;
+    background:#A71930 !important;
+    border:1px solid #A71930 !important;
+    box-shadow:0 7px 16px rgba(167,25,48,.16) !important;
+  }
+
+  body.stackly-services-page .stk-services-demo-btn span{
     display:block !important;
-    width:38px !important;
-    height:38px !important;
-    flex:0 0 38px !important;
-    object-fit:contain !important;
-    object-position:center !important;
-    filter:
-      brightness(0)
-      saturate(100%)
-      invert(17%)
-      sepia(78%)
-      saturate(2544%)
-      hue-rotate(340deg)
-      brightness(83%)
-      contrast(99%);
+    max-width:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+    font:600 12px/1 Inter,sans-serif !important;
+    letter-spacing:-.01em !important;
   }
-  .pl-logo .stackly-logo-webp{
-    width:34px !important;
-    height:34px !important;
-    flex-basis:34px !important;
+
+  body.stackly-services-page .stk-services-sign-btn{
+    color:#741020 !important;
+    background:rgba(255,255,255,.78) !important;
+    border:1px solid rgba(116,16,32,.16) !important;
   }
-  .brand .stackly-logo-webp,
-  .mm-brand .stackly-logo-webp{
-    width:38px !important;
-    height:38px !important;
-    flex-basis:38px !important;
+
+  /* On very small screens, reduce text slightly instead of
+     allowing the button to become oversized. */
+  body.stackly-services-page .stk-services-demo-btn span{
+    font-size:clamp(10.5px,3.15vw,12px) !important;
   }
-  @media (max-width:390px){
-    .mm-brand .stackly-logo-webp{
-      width:34px !important;
-      height:34px !important;
-      flex-basis:34px !important;
-    }
+
+  /* Footer stays neutral; it must never inherit service red. */
+  body.stackly-services-page .stk-services-menu-foot{
+    color:rgba(42,33,30,.48) !important;
   }
+}
+
+/* These red rules exist ONLY on the Services page. */
+body:not(.stackly-services-page) .stk-services-menu-nav a.is-active{
+  color:inherit;
+  background:transparent;
+  border-color:transparent;
+}
+
+body:not(.stackly-services-page) .stk-services-demo-btn{
+  color:inherit;
+  background:inherit;
+  border-color:inherit;
+  box-shadow:none;
+}
+</style>
+
+<style id="stackly-about-logo-treatment">
+/* =========================================================
+   STACKLY LOGO
+   Full logo image only — no separate Stackly text
+   ========================================================= */
+.stackly-logo-webp{
+  width:180px !important;
+  height:auto !important;
+  max-width:none !important;
+  flex:0 0 auto !important;
+  display:block !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  background:transparent !important;
+  border:0 !important;
+  border-radius:0 !important;
+  filter:brightness(0) saturate(100%) invert(17%) sepia(78%) saturate(2544%) hue-rotate(340deg) brightness(83%) contrast(99%);
+}
+
+/* Preloader logo stays compact */
+.pl-logo .stackly-logo-webp{
+  width:42px !important;
+  height:42px !important;
+  flex:0 0 42px !important;
+}
+
+/* Desktop header */
+.site-header .brand .stackly-logo-webp{
+  width:180px !important;
+  height:auto !important;
+  flex:0 0 auto !important;
+}
+
+/* Mobile header */
+@media (max-width:767px){
+  .site-header .brand .stackly-logo-webp{
+    width:160px !important;
+    height:auto !important;
+    flex:0 0 auto !important;
+  }
+}
+
+/* Small mobile */
+@media (max-width:390px){
+  .site-header .brand .stackly-logo-webp{
+    width:145px !important;
+    height:auto !important;
+    flex:0 0 auto !important;
+  }
+}
+
+/* Mobile menu logo */
+.stk-services-menu-mark.stackly-logo-webp{
+  width:180px !important;
+  height:auto !important;
+  flex:0 0 auto !important;
+}
+
+@media (max-width:767px){
+  .stk-services-menu-mark.stackly-logo-webp{
+    width:160px !important;
+    height:auto !important;
+  }
+}
+
+@media (max-width:390px){
+  .stk-services-menu-mark.stackly-logo-webp{
+    width:145px !important;
+    height:auto !important;
+  }
+}
+</style>
+
+<style id="stk-about-nav-final">
+/* About Us — clean single-line navigation item */
+.site-header .main-nav > li > a.stk-about-nav{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:max-content !important;
+  min-width:max-content !important;
+  max-width:none !important;
+  flex:0 0 auto !important;
+  white-space:nowrap !important;
+  word-break:keep-all !important;
+  overflow-wrap:normal !important;
+  line-height:1 !important;
+  padding:10px 2px !important;
+  position:relative !important;
+  text-decoration:none !important;
+  color:#2a211e !important;
+  transition:color .25s ease, transform .25s ease !important;
+}
+
+.site-header .main-nav > li > a.stk-about-nav::after{
+  content:"" !important;
+  position:absolute !important;
+  left:0 !important;
+  right:0 !important;
+  bottom:2px !important;
+  height:2px !important;
+  border-radius:999px !important;
+  background:#a71930 !important;
+  transform:scaleX(0) !important;
+  transform-origin:center !important;
+  transition:transform .25s ease !important;
+}
+
+.site-header .main-nav > li > a.stk-about-nav:hover{
+  color:#a71930 !important;
+  transform:translateY(-1px) !important;
+}
+
+.site-header .main-nav > li > a.stk-about-nav:hover::after{
+  transform:scaleX(1) !important;
+}
+
+@media (max-width:1100px){
+  .site-header .main-nav > li > a.stk-about-nav{
+    white-space:nowrap !important;
+    min-width:max-content !important;
+  }
+}
+<style id="stackly-about-active-status">
+/* About page active navigation state */
+.site-header .main-nav > li > a.stk-about-nav.is-active{
+  color:#A71930 !important;
+}
+.site-header .main-nav > li > a.stk-about-nav.is-active::after{
+  transform:scaleX(1) !important;
+}
 </style>
 
 </head>
@@ -823,7 +1331,7 @@
       <circle class="ring-track" cx="50" cy="50" r="46" fill="none" stroke-width="2.5"/>
       <circle class="ring-fill" cx="50" cy="50" r="46" fill="none" stroke-width="2.5"/>
     </svg>
-    <div class="pl-logo"><img class="mark stackly-logo-webp" src="assets/img/logo.webp" alt="Stackly" aria-hidden="true"></div>
+    <div class="pl-logo"><img class="mark stackly-logo-webp" src="assets/img/stackly-logo.webp" alt="Stackly" aria-hidden="true"></div>
   </div>
   <div class="pl-bar"><span></span></div>
   <div class="pl-num">00</div>
@@ -831,60 +1339,99 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <a href="index.html" class="brand" aria-label="Stackly home"><img class="mark stackly-logo-webp" src="assets/img/logo.webp" alt="Stackly" aria-hidden="true"><span class="wordmark">Stackly</span></a>
+    <a href="index.html" class="brand" aria-label="Stackly home">
+      <img class="mark stackly-logo-webp" src="assets/img/stackly-logo.webp" alt="Stackly" aria-hidden="true">
+    </a>
+
     <nav aria-label="Primary">
       <ul class="main-nav">
         <li><a href="index.html" class="nav-home">Home</a></li>
         <li>
-          <a href="product.html">Products <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><use href="#i-chevron"/></svg></a>
+          <a href="product.html">Products
+          </a>
         </li>
         <li>
-          <a href="services.html">Solutions <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><use href="#i-chevron"/></svg></a>
+          <a href="services.html">Solutions
+          </a>
         </li>
         <li>
-          <a href="blog.html">Resources <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><use href="#i-chevron"/></svg></a>
+          <a href="blog.html">Resources
+          </a>
         </li>
         <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact </a></li>
+        <li><a href="about.html" class="stk-about-nav is-active" aria-current="page">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+
     <div class="header-actions">
-      <button class="lang-select" aria-label="Change language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-globe"/></svg><b>EN</b><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><use href="#i-chevron"/></svg></button>
-      <a href="login.html" class="btn btn-primary btn-sm"><span>Request a Demo</span><svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
-      <button class="stk-mobile-trigger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="lang-select" aria-label="Change language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <use href="#i-globe"/>
+        </svg>
+        <b>EN</b>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+          <use href="#i-chevron"/>
+        </svg>
+      </button>
+
+      <a href="login.html" class="btn btn-primary btn-sm">
+        <span>Request a Demo</span>
+        <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <use href="#i-arrow"/>
+        </svg>
+      </a>
+
+      <button class="stk-services-trigger" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
-<div class="stk-mobile-overlay" aria-hidden="true"></div>
-<div class="stk-mobile-panel" id="stkMobilePanel" aria-label="Mobile navigation" aria-hidden="true">
-  <button type="button" class="stk-mobile-close" aria-label="Close menu"><span></span><span></span></button>
-  <a href="index.html" class="brand mm-brand" aria-label="Stackly home">
-    <img class="mark stackly-logo-webp" src="assets/img/logo.webp" alt="Stackly" aria-hidden="true">
-    <span class="wordmark">Stackly</span>
-  </a>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="product.html">Products</a>
-    <a href="services.html">Solutions</a>
-    <a href="blog.html">Resources</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="mm-actions">
-    <a href="login.html" class="btn btn-primary"><span>Request a Demo</span><svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-arrow"/></svg></a>
-    <a href="register.html" class="btn btn-outline">Sign In</a>
+
+<!-- Services mobile navigation: deliberately outside .site-header/.header-actions
+     so global header styles cannot distort the full-screen menu. -->
+<div class="stk-services-menu" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="stk-services-menu-card">
+    <div class="stk-services-menu-head">
+      <a href="index.html" class="stk-services-menu-brand" aria-label="Stackly home">
+        <img class="stk-services-menu-mark stackly-logo-webp" src="assets/img/stackly-logo.webp" alt="Stackly">
+      </a>
+
+      <button class="stk-services-menu-close" type="button" aria-label="Close menu">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="stk-services-menu-nav" aria-label="Mobile primary navigation">
+      <a href="index.html">Home<span aria-hidden="true">→</span></a>
+      <a href="product.html">Products<span aria-hidden="true">→</span></a>
+      <a href="services.html">Services<span aria-hidden="true">→</span></a>
+      <a href="blog.html">Resources<span aria-hidden="true">→</span></a>
+      <a href="pricing.html">Pricing<span aria-hidden="true">→</span></a>
+      <a href="about.html" class="is-active" aria-current="page">About Us<span aria-hidden="true">→</span></a>
+      <a href="contact.html">Contact<span aria-hidden="true">→</span></a>
+    </nav>
+
+    <div class="stk-services-menu-actions">
+      <a href="login.html" class="stk-services-demo-btn">
+        <span>Request a Demo</span><span aria-hidden="true">→</span>
+      </a>
+      <a href="register.html" class="stk-services-sign-btn">Sign In</a>
+    </div>
+
+    <div class="stk-services-menu-foot">
+      &copy; <span data-year>2026</span> Stackly Enterprise. All rights reserved.
+    </div>
   </div>
-  <div class="mm-foot">&copy; <span data-year>2025</span> Stackly Enterprise. All rights reserved.</div>
 </div>
-<div class="search-overlay role="dialog" aria-label="Search Stackly">
+
+<div class="search-overlay" role="dialog" aria-label="Search Stackly">
   <button class="icon-btn so-close" aria-label="Close search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-plus"/></svg></button>
   <input type="text" placeholder="Search Stackly..." aria-label="Search query">
   <p class="so-hint">Try &ldquo;pricing&rdquo;, &ldquo;dashboard&rdquo; or &ldquo;security&rdquo;</p>
   <div class="search-results"></div>
 </div>
-
 
 <main id="main">
   <section class="page-hero">
@@ -892,7 +1439,7 @@
       <span class="eyebrow">About Stackly</span>
       <h1>We Build the Systems<br>Behind <span class="accent">Ambitious Companies</span></h1>
       <p class="lead">Founded by operators who were tired of enterprise software that gets in the way, Stackly exists to make powerful technology feel effortless.</p>
-      <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span>About Us</span></div>
+      <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span class="current">About Us</span></div>
     </div>
   </section>
 
@@ -1015,11 +1562,11 @@
 
 <footer class="site-footer">
   <div class="container">
-    <a href="index.html" class="brand" aria-label="Stackly home"><img class="mark stackly-logo-webp" src="assets/img/logo.webp" alt="Stackly" aria-hidden="true"><span class="wordmark">Stackly</span></a>
+    <a href="index.html" class="brand" aria-label="Stackly home"><img class="mark stackly-logo-webp" src="assets/img/stackly-logo.webp" alt="Stackly" aria-hidden="true"><span class="wordmark"></span></a>
     <p class="footer-statement">Technology that moves <span class="accent">business</span> forward.</p>
     <div class="footer-grid">
       <div class="footer-col footer-about">
-        <h5>Stackly</h5>
+        <h5></h5>
         <p>The all-in-one enterprise platform for operations, analytics and growth — trusted by 500+ businesses worldwide.</p>
         <div class="social-row">
           <a href="404.html" aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.49 2.49 0 1 1 5 8.48a2.49 2.49 0 0 1-.02-4.98zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9z"/></svg></a>
@@ -1029,8 +1576,8 @@
       </div>
       <div class="footer-col"><h5>Solutions</h5><ul><li><a href="404.html">Enterprise Suite</a></li><li><a href="404.html">Analytics Cloud</a></li><li><a href="404.html">Automation</a></li><li><a href="404.html">Integrations</a></li></ul></div>
       <div class="footer-col"><h5>Company</h5>
-        <ul><li><a href="index.html">home</a></li><li><a href="product.html">products</a></li><li><a href="services.html">solutions</a></li><li><a href="blog.html">resources</a></li><li><a href="pricing.html">pricing</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">contact</a></li></ul></div>      <div class="footer-col"><h5>Resources</h5><ul><li><a href="404.html">Pricing</a></li><li><a href="404.html">FAQ</a></li><li><a href="404.html">Documentation</a></li><li><a href="404.html">Dashboard Demo</a></li></ul></div>
-        <div class="footer-col newsletter">
+        <ul><li><a href="index.html">Home</a></li><li><a href="product.html">Products</a></li><li><a href="services.html">Solutions</a></li><li><a href="blog.html">Resources</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li></ul></div>      <div class="footer-col"><h5>Resources</h5><ul><li><a href="404.html">Pricing</a></li><li><a href="404.html">FAQ</a></li><li><a href="404.html">Documentation</a></li><li><a href="404.html">Dashboard Demo</a></li></ul></div>
+       <div class="footer-col newsletter">
   <h5>Stay Ahead</h5>
 
   <p>Monthly insights on enterprise technology. No noise.</p>
@@ -1040,7 +1587,7 @@
     <input
       type="text"
       class="stk-footer-email"
-      placeholder="Your work email"
+      placeholder=" email"
       aria-label="Email address"
     >
 
@@ -1366,84 +1913,62 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-<script id="stackly-isolated-mobile-menu">
-(function () {
-  'use strict';
+<script id="stackly-services-mobile-menu-controller">
+(function(){
+  function initServicesMenu(){
+    var trigger = document.querySelector('.stk-services-trigger');
+    var menu = document.querySelector('.stk-services-menu');
+    var closeButton = document.querySelector('.stk-services-menu-close');
 
-  function initStacklyMobileMenu() {
-    var trigger = document.querySelector('.stk-mobile-trigger');
-    var panel = document.querySelector('.stk-mobile-panel');
-    var overlay = document.querySelector('.stk-mobile-overlay');
-    var closeButton = document.querySelector('.stk-mobile-close');
-    if (!trigger || !panel || !overlay) return;
+    if (!trigger || !menu || !closeButton || menu.dataset.stkBound === 'true') return;
+    menu.dataset.stkBound = 'true';
 
-    function setActiveNav() {
-      var current = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
-      panel.querySelectorAll('nav a').forEach(function (link) {
-        var href = (link.getAttribute('href') || '').split('#')[0].split('/').pop().toLowerCase();
-        var active = href === current || (current === '' && href === 'index.html');
-        link.classList.toggle('active', active);
-        if (active) link.setAttribute('aria-current', 'page');
-        else link.removeAttribute('aria-current');
-      });
+    function setOpen(open){
+      trigger.classList.toggle('is-open', open);
+      menu.classList.toggle('is-open', open);
+      trigger.setAttribute('aria-expanded', String(open));
+      menu.setAttribute('aria-hidden', String(!open));
+      document.documentElement.classList.toggle('stk-services-menu-lock', open);
+      document.body.classList.toggle('stk-services-menu-lock', open);
     }
 
-    function openMenu() {
-      document.body.classList.add('stk-menu-open');
-      trigger.classList.add('is-open');
-      trigger.setAttribute('aria-expanded', 'true');
-      trigger.setAttribute('aria-label', 'Close menu');
-      panel.setAttribute('aria-hidden', 'false');
-    }
-
-    function closeMenu() {
-      document.body.classList.remove('stk-menu-open');
-      trigger.classList.remove('is-open');
-      trigger.setAttribute('aria-expanded', 'false');
-      trigger.setAttribute('aria-label', 'Open menu');
-      panel.setAttribute('aria-hidden', 'true');
-    }
-
-    function toggleMenu(event) {
-      if (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        if (event.stopImmediatePropagation) event.stopImmediatePropagation();
-      }
-      if (document.body.classList.contains('stk-menu-open')) closeMenu();
-      else openMenu();
-    }
-
-    trigger.addEventListener('click', toggleMenu, true);
-    if (closeButton) closeButton.addEventListener('click', function (event) { toggleMenu(event); }, true);
-    overlay.addEventListener('click', function (event) {
-      event.preventDefault();
-      closeMenu();
+    trigger.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      setOpen(!menu.classList.contains('is-open'));
     });
 
-    panel.querySelectorAll('nav a, .mm-actions a, .mm-brand').forEach(function (link) {
-      link.addEventListener('click', function () {
-        closeMenu();
+    closeButton.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      setOpen(false);
+    });
+
+    menu.addEventListener('click', function(e){
+      if (e.target === menu) setOpen(false);
+    });
+
+    menu.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        setOpen(false);
       });
     });
 
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && document.body.classList.contains('stk-menu-open')) {
-        closeMenu();
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+        setOpen(false);
       }
     });
 
-    window.addEventListener('resize', function () {
-      if (window.innerWidth >= 768) closeMenu();
+    window.addEventListener('resize', function(){
+      if (window.innerWidth >= 768) setOpen(false);
     });
-
-    setActiveNav();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initStacklyMobileMenu);
+    document.addEventListener('DOMContentLoaded', initServicesMenu);
   } else {
-    initStacklyMobileMenu();
+    initServicesMenu();
   }
 })();
 </script>

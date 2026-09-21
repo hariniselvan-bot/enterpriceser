@@ -510,7 +510,84 @@ body{
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
-</style>
+
+/* =========================================================
+   FINAL BRAND + ROLE ICON POLISH
+   ========================================================= */
+.brand-logo{
+  position:relative;
+  transition:transform .3s ease;
+}
+.brand-logo:hover{
+  transform:translateY(-1px);
+}
+.brand-mark.stackly-login-logo{
+  width:150px!important;
+  height:150px!important;
+  flex:0 0 150px!important;
+  padding:5px;
+  filter:brightness(0) invert(1)!important;
+  transform:scale(1.04);
+}
+.role-icon{
+  width:38px!important;
+  height:38px!important;
+  border-radius:11px!important;
+  display:grid!important;
+  place-items:center!important;
+  color:var(--burgundy)!important;
+  background:linear-gradient(145deg,#fff,#f7eee5)!important;
+  border:1px solid #e5d4c5!important;
+  box-shadow:0 7px 18px rgba(125,22,40,.08);
+  transition:transform .25s ease,background .25s ease,color .25s ease,box-shadow .25s ease;
+}
+.role-icon svg{
+  width:21px;
+  height:21px;
+  display:block;
+}
+.role-option input:checked + .role-card .role-icon{
+  color:#fff!important;
+  background:linear-gradient(135deg,var(--burgundy),var(--red))!important;
+  border-color:transparent!important;
+  box-shadow:0 8px 20px rgba(125,22,40,.22);
+  transform:translateY(-1px);
+}
+.role-card:hover .role-icon{
+  transform:translateY(-1px) scale(1.04);
+}
+.role-option input:checked + .role-card .role-icon svg{
+  filter:drop-shadow(0 2px 3px rgba(0,0,0,.14));
+}
+
+@media(max-width:600px){
+  .brand-logo{
+    gap:12px;
+  }
+  .brand-mark.stackly-login-logo{
+    width:100px!important;
+    height:100px!important;
+    flex-basis:100px!important;
+    padding:3px;
+  }
+  .role-icon{
+    width:32px!important;
+    height:32px!important;
+    border-radius:9px!important;
+  }
+  .role-icon svg{
+    width:18px;
+    height:18px;
+  }
+}
+@media(max-width:360px){
+  .brand-mark.stackly-login-logo{
+    width:82px!important;
+    height:82px!important;
+    flex-basis:82px!important;
+  }
+}
+
 </style>
 </head>
 
@@ -524,9 +601,8 @@ body{
   <section class="login-brand" aria-label="Stackly introduction">
     <div class="brand-inner">
       <a href="index.html" class="brand-logo" aria-label="Stackly home">
-        <img class="brand-mark stackly-login-logo" src="assets/img/logo.webp" alt="Stackly">
-        <span>Stackly</span>
-      </a>
+        <img class="brand-mark stackly-login-logo" src="assets/img/stackly-logo.webp" alt="Stackly">
+            </a>
 
       <div class="brand-copy">
         <div class="brand-eyebrow"><i></i> Enterprise Platform</div>
@@ -569,7 +645,14 @@ body{
         <label class="role-option">
           <input type="radio" name="accountRole" value="entrepreneur" checked>
           <span class="role-card">
-            <span class="role-icon">◆</span>
+            <span class="role-icon entrepreneur-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="7.5" r="3.2"></circle>
+                <path d="M5.5 20c.7-3.7 2.9-5.7 6.5-5.7s5.8 2 6.5 5.7"></path>
+                <path d="M16.8 4.8l1.5 1.5"></path>
+                <path d="M7.2 4.8L5.7 6.3"></path>
+              </svg>
+            </span>
             <strong>Entrepreneur</strong>
             <span>Business dashboard</span>
           </span>
@@ -578,7 +661,14 @@ body{
         <label class="role-option">
           <input type="radio" name="accountRole" value="customer">
           <span class="role-card">
-            <span class="role-icon">◇</span>
+            <span class="role-icon customer-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="8" r="3"></circle>
+                <path d="M3 20c.6-3.3 2.6-5.2 6-5.2s5.4 1.9 6 5.2"></path>
+                <path d="M15.5 5.8a2.7 2.7 0 0 1 0 5.2"></path>
+                <path d="M16 14.8c2.5.4 4.1 2.1 4.7 5.2"></path>
+              </svg>
+            </span>
             <strong>Customer</strong>
             <span>Customer dashboard</span>
           </span>
