@@ -589,6 +589,860 @@
 .site-header .main-nav > li > a.stk-pricing-nav.is-active::after{transform:scaleX(1) !important}
 @media (max-width:1100px){.site-header .main-nav > li > a.stk-pricing-nav{white-space:nowrap !important;min-width:max-content !important}}
 </style>
+
+<style id="STACKLY-BOTTOM-FINAL-HARD-CSS">
+/* =========================================================
+   STACKLY FOOTER BOTTOM ROW — FINAL ALIGNMENT
+   Copyright starts exactly under the footer/logo.
+   Legal links end exactly at the newsletter/email right edge.
+   ========================================================= */
+
+/* Desktop */
+@media (min-width: 768px) {
+
+  /* The row is INSIDE the same .container as the footer grid.
+     Therefore its left/right edges use the same content boundaries. */
+  .site-footer > .container > .footer-bottom.stackly-bottom-final {
+    position: relative !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    box-sizing: border-box !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    height: auto !important;
+
+    margin-top: 28px !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+
+    padding: 0 !important;
+
+    inset: auto !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+    float: none !important;
+    clear: both !important;
+  }
+
+  /* COPYRIGHT
+     Starts at the exact left edge of the footer container/logo. */
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > p {
+    position: static !important;
+
+    display: block !important;
+
+    flex: 0 0 auto !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: left !important;
+    white-space: nowrap !important;
+
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+  }
+
+  /* LEGAL LINKS
+     Pushes the whole group to the exact right edge of the
+     same footer container as the newsletter. */
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links {
+    position: static !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+
+    flex: 0 0 auto !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin: 0 0 0 auto !important;
+    padding: 0 !important;
+
+    gap: 28px !important;
+
+    white-space: nowrap !important;
+
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links a {
+    position: static !important;
+
+    display: inline-block !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    white-space: nowrap !important;
+
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 767px) {
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final {
+    position: relative !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    gap: 14px !important;
+
+    margin-top: 24px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    padding: 0 !important;
+
+    transform: none !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > p {
+    position: static !important;
+
+    width: auto !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    white-space: normal !important;
+    text-align: left !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links {
+    position: static !important;
+
+    display: flex !important;
+
+    width: 100% !important;
+
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+
+    gap: 10px 20px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    white-space: normal !important;
+  }
+}
+</style>
+
+
+<style id="stackly-copyright-only-fix">
+/* COPYRIGHT ONLY — do not change the rest of the footer */
+@media (min-width: 768px) {
+  .site-footer .footer-bottom.stackly-bottom-final > p {
+    position: relative !important;
+
+    /* Move only the copyright to the same left edge as the footer/logo. */
+    left: max(0px, calc((100vw - 1350px) / 2)) !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    text-align: left !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-footer .footer-bottom.stackly-bottom-final > p {
+    position: relative !important;
+    left: 0 !important;
+    margin-left: 0 !important;
+    text-align: left !important;
+  }
+}
+</style>
+
+
+
+
+<style id="stackly-bottom-reference-final">
+/* =========================================================
+   STACKLY BOTTOM ROW — MATCH THE REFERENCE SCREENSHOT
+   ONLY copyright + legal-links positioning.
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+  /* The bottom row stays inside the existing footer container. */
+  .site-footer > .container > .footer-bottom.stackly-bottom-final {
+    position: relative !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    width: 100% !important;
+    box-sizing: border-box !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    transform: none !important;
+  }
+
+  /* COPYRIGHT:
+     exact same left edge as the footer content/logo. */
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > p {
+    position: static !important;
+
+    flex: 0 0 auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: left !important;
+    white-space: nowrap !important;
+
+    transform: none !important;
+  }
+
+  /* LEGAL LINKS:
+     exact same RIGHT edge as the email/newsletter box. */
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links {
+    position: static !important;
+
+    flex: 0 0 auto !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+
+    width: auto !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    gap: 28px !important;
+
+    white-space: nowrap !important;
+
+    transform: none !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links a {
+    position: static !important;
+
+    display: inline-block !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    white-space: nowrap !important;
+
+    transform: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-footer > .container > .footer-bottom.stackly-bottom-final {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+
+    gap: 14px !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > p {
+    white-space: normal !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+
+    gap: 10px 20px !important;
+  }
+}
+</style>
+
+
+<style id="stackly-bottom-legal-reference-final">
+/* =========================================================
+   STACKLY FOOTER — BOTTOM ROW MATCHES REFERENCE IMAGE
+   Privacy Policy | Terms of Service | Security
+   All stay on ONE horizontal line.
+   The RIGHT edge of Security aligns with the RIGHT edge
+   of the newsletter/email box above.
+   ========================================================= */
+
+@media (min-width: 768px) {
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    width: 100% !important;
+    box-sizing: border-box !important;
+
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Copyright stays on the LEFT. */
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > p {
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: left !important;
+    white-space: nowrap !important;
+
+    position: static !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  /* Legal links stay on ONE line and use the same
+     right-side width as the newsletter. */
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+
+    width: 350px !important;
+    max-width: 350px !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    margin-left: auto !important;
+    padding: 0 !important;
+
+    gap: 28px !important;
+
+    white-space: nowrap !important;
+
+    position: static !important;
+    right: auto !important;
+    transform: none !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links a {
+    display: inline-block !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    white-space: nowrap !important;
+
+    position: static !important;
+    right: auto !important;
+    transform: none !important;
+  }
+}
+
+/* Mobile: keep the legal links usable without forcing overflow. */
+@media (max-width: 767px) {
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+
+    gap: 10px 20px !important;
+    margin: 0 !important;
+  }
+}
+</style>
+
+
+<style id="stackly-footer-exact-email-alignment">
+/* =========================================================
+   STACKLY FOOTER — EXACT REFERENCE ALIGNMENT
+   The legal-links RIGHT EDGE is locked to the actual
+   newsletter/email box RIGHT EDGE.
+   ========================================================= */
+
+@media (min-width: 768px) {
+  .site-footer > .container > .footer-bottom.stackly-bottom-final {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    margin: 28px 0 0 !important;
+    padding: 0 !important;
+    min-height: 28px !important;
+  }
+
+  /* Copyright: left edge of the footer container. */
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > p {
+    position: static !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    transform: none !important;
+    left: auto !important;
+  }
+
+  /* Legal links: JS sets the exact right offset.
+     This prevents them from going to the far-right container edge. */
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links {
+    position: absolute !important;
+    top: 50% !important;
+    right: 0 !important;
+    transform: translateY(-50%) !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+
+    width: max-content !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 28px !important;
+
+    white-space: nowrap !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links a {
+    display: inline-block !important;
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-footer > .container > .footer-bottom.stackly-bottom-final {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 14px !important;
+    width: 100% !important;
+    margin: 24px 0 0 !important;
+    padding: 0 !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > p {
+    position: static !important;
+    left: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: normal !important;
+    transform: none !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links {
+    position: static !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 10px 20px !important;
+    transform: none !important;
+  }
+}
+</style>
+
+
+<style id="STACKLY-EXACT-EMAIL-RIGHT-ALIGNMENT">
+/* =========================================================
+   FINAL FOOTER ALIGNMENT
+   Privacy / Terms / Security:
+   RIGHT EDGE = EXACT RIGHT EDGE OF NEWSLETTER EMAIL BOX
+   ========================================================= */
+
+@media (min-width:768px){
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final{
+    position:relative !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    width:100% !important;
+    min-height:28px !important;
+    margin:28px 0 0 !important;
+    padding:0 !important;
+    box-sizing:border-box !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > p{
+    position:static !important;
+    flex:0 0 auto !important;
+    margin:0 !important;
+    padding:0 !important;
+    text-align:left !important;
+    white-space:nowrap !important;
+    transform:none !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links{
+    position:absolute !important;
+
+    /* JS changes only this value to match the REAL email box. */
+    right:var(--stackly-legal-right-offset, 0px) !important;
+    top:50% !important;
+    transform:translateY(-50%) !important;
+
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+
+    width:max-content !important;
+    max-width:none !important;
+    min-width:0 !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    gap:28px !important;
+    white-space:nowrap !important;
+    box-sizing:border-box !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links a{
+    position:static !important;
+    display:inline-block !important;
+    margin:0 !important;
+    padding:0 !important;
+    white-space:nowrap !important;
+    transform:none !important;
+  }
+}
+
+@media (max-width:767px){
+  .site-footer > .container > .footer-bottom.stackly-bottom-final{
+    position:relative !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:14px !important;
+    width:100% !important;
+    margin:24px 0 0 !important;
+    padding:0 !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > p{
+    position:static !important;
+    margin:0 !important;
+    padding:0 !important;
+    white-space:normal !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links{
+    position:static !important;
+    display:flex !important;
+    flex-wrap:wrap !important;
+    justify-content:flex-start !important;
+    align-items:center !important;
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+    gap:10px 20px !important;
+    transform:none !important;
+    white-space:normal !important;
+  }
+}
+</style>
+
+
+<style id="stackly-footer-copyright-and-legal-final">
+@media (min-width:768px){
+  .site-footer > .container > .footer-bottom.stackly-bottom-final{
+    position:relative !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    width:100% !important;
+    min-height:28px !important;
+    margin:28px 0 0 !important;
+    padding:0 !important;
+    box-sizing:border-box !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > p{
+    position:static !important;
+    flex:0 0 auto !important;
+    margin:0 !important;
+    padding:0 !important;
+    text-align:left !important;
+    white-space:nowrap !important;
+    transform:none !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links{
+    position:absolute !important;
+    right:var(--stackly-legal-right-offset,0px) !important;
+    top:50% !important;
+    transform:translateY(-50%) !important;
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+    width:max-content !important;
+    max-width:none !important;
+    min-width:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+    gap:28px !important;
+    white-space:nowrap !important;
+    box-sizing:border-box !important;
+  }
+
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links a{
+    position:static !important;
+    display:inline-block !important;
+    margin:0 !important;
+    padding:0 !important;
+    white-space:nowrap !important;
+    transform:none !important;
+  }
+}
+
+@media (max-width:767px){
+  .site-footer > .container > .footer-bottom.stackly-bottom-final{
+    position:relative !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:14px !important;
+    width:100% !important;
+    margin:24px 0 0 !important;
+    padding:0 !important;
+  }
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > p{
+    position:static !important;
+    margin:0 !important;
+    padding:0 !important;
+    white-space:normal !important;
+  }
+  .site-footer > .container > .footer-bottom.stackly-bottom-final > .legal-links{
+    position:static !important;
+    display:flex !important;
+    flex-wrap:wrap !important;
+    justify-content:flex-start !important;
+    align-items:center !important;
+    width:100% !important;
+    max-width:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+    gap:10px 20px !important;
+    transform:none !important;
+    white-space:normal !important;
+  }
+}
+</style>
+<script id="stackly-footer-email-edge-sync">
+(function(){
+  function syncStacklyFooterLegal(){
+    if (window.innerWidth < 768) return;
+    var footer = document.querySelector('.site-footer');
+    if (!footer) return;
+    var row = footer.querySelector('.footer-bottom.stackly-bottom-final');
+    var legal = row && row.querySelector('.legal-links');
+    if (!row || !legal) return;
+
+    var candidates = [
+      '.newsletter-form',
+      '.footer-newsletter',
+      '.newsletter',
+      '.email-form',
+      'input[type="email"]'
+    ];
+    var target = null;
+    for (var i=0; i<candidates.length; i++){
+      var el = footer.querySelector(candidates[i]);
+      if (el) {
+        target = el.closest('form') || el.closest('.newsletter-form') || el.closest('.footer-newsletter') || el;
+        if (target) break;
+      }
+    }
+    if (!target) return;
+
+    var rowRect = row.getBoundingClientRect();
+    var targetRect = target.getBoundingClientRect();
+    var offset = rowRect.right - targetRect.right;
+    legal.style.setProperty('--stackly-legal-right-offset', Math.max(0, offset) + 'px');
+  }
+
+  window.addEventListener('load', function(){
+    setTimeout(syncStacklyFooterLegal, 80);
+    setTimeout(syncStacklyFooterLegal, 400);
+  });
+  window.addEventListener('resize', syncStacklyFooterLegal);
+})();
+</script>
+
+
+<style id="stackly-copyright-inside-footer-fix">
+/* =========================================================
+   STACKLY COPYRIGHT — INSIDE FOOTER, NO OVERFLOW
+   ========================================================= */
+
+.site-footer .stackly-footer-bottom{
+  width:100%;
+  max-width:100%;
+  box-sizing:border-box;
+  margin:28px 0 0;
+  padding:18px 0 0;
+  border-top:1px solid rgba(23,23,27,.10);
+  overflow:hidden;
+}
+
+.site-footer .stackly-footer-copyright{
+  display:block;
+  width:100%;
+  max-width:100%;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  color:rgba(42,33,30,.62);
+  font-family:Inter,sans-serif;
+  font-size:12px;
+  line-height:1.5;
+  text-align:left;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  word-break:normal;
+}
+
+/* Keep the copyright safely inside the footer on smaller screens. */
+@media (max-width:767px){
+  .site-footer .stackly-footer-bottom{
+    margin-top:22px;
+    padding-top:15px;
+  }
+
+  .site-footer .stackly-footer-copyright{
+    font-size:11px;
+    line-height:1.5;
+  }
+}
+</style>
+
+
+<style id="stackly-footer-legal-inside-fix">
+/* Legal links stay inside the same footer bottom container. */
+.site-footer .stackly-footer-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.site-footer .stackly-footer-legal{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:28px;
+  max-width:100%;
+  box-sizing:border-box;
+  min-width:0;
+  overflow:hidden;
+}
+
+.site-footer .stackly-footer-legal a{
+  display:inline-block;
+  color:rgba(42,33,30,.62);
+  font-family:Inter,sans-serif;
+  font-size:12px;
+  line-height:1.5;
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.site-footer .stackly-footer-legal a:hover{
+  color:#a71930;
+}
+
+@media (max-width:767px){
+  .site-footer .stackly-footer-bottom{
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:flex-start;
+    gap:12px;
+  }
+
+  .site-footer .stackly-footer-legal{
+    width:100%;
+    justify-content:flex-start;
+    flex-wrap:wrap;
+    gap:8px 20px;
+    overflow:visible;
+  }
+
+  .site-footer .stackly-footer-legal a{
+    font-size:11px;
+  }
+}
+</style>
+
 </head>
 <body class="stackly-pricing-page">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -830,6 +1684,7 @@
     ></span>
 
   </form>
+
 </div>
 <style>
   /* =========================================
@@ -1027,13 +1882,19 @@
 })();
 </script>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; <span data-year>2025</span> Stackly Enterprise Software. All rights reserved.</p>
-      <div class="legal-links">
-        <a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Security</a>
+
+      <!-- Footer copyright: stays inside the footer container -->
+      <div class="stackly-footer-bottom">
+        <p class="stackly-footer-copyright">
+          &copy; <span data-year>2026</span> Stackly Enterprise. All rights reserved.
+        </p>
+
+        <nav class="stackly-footer-legal" aria-label="Footer legal links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Security</a>
+        </nav>
       </div>
-    </div>
   </div>
 </footer>
 <button class="to-top" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
@@ -1170,5 +2031,124 @@
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initServicesMenu);else initServicesMenu();
 })();
 </script>
+
+
+<script id="stackly-footer-exact-email-alignment-js">
+(function () {
+  "use strict";
+
+  function alignFooterLegalLinks() {
+    if (window.innerWidth < 768) return;
+
+    var footer = document.querySelector(".site-footer");
+    var bottom = document.querySelector(
+      ".site-footer > .container > .footer-bottom.stackly-bottom-final"
+    );
+    var legal = bottom && bottom.querySelector(".legal-links");
+    var newsletter = document.querySelector(
+      ".site-footer .footer-col.newsletter .stk-footer-newsletter"
+    );
+
+    if (!footer || !bottom || !legal || !newsletter) return;
+
+    /* Measure the REAL rendered email box, not the grid column. */
+    var emailRect = newsletter.getBoundingClientRect();
+    var bottomRect = bottom.getBoundingClientRect();
+
+    /*
+      The legal-links right edge becomes exactly the same
+      x-coordinate as the email box right edge.
+    */
+    var rightOffset = bottomRect.right - emailRect.right;
+
+    legal.style.setProperty("right", rightOffset + "px", "important");
+  }
+
+  function scheduleFooterAlignment() {
+    requestAnimationFrame(alignFooterLegalLinks);
+  }
+
+  window.addEventListener("load", scheduleFooterAlignment);
+  window.addEventListener("resize", scheduleFooterAlignment);
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(scheduleFooterAlignment);
+  }
+
+  setTimeout(scheduleFooterAlignment, 100);
+  setTimeout(scheduleFooterAlignment, 500);
+})();
+</script>
+
+
+<script id="STACKLY-EXACT-EMAIL-RIGHT-ALIGNMENT-JS">
+(function(){
+  "use strict";
+
+  function exactEmailRightAlignment(){
+    if(window.innerWidth < 768) return;
+
+    var bottom = document.querySelector(
+      ".site-footer > .container > .footer-bottom.stackly-bottom-final"
+    );
+
+    var legal = bottom && bottom.querySelector(".legal-links");
+
+    var newsletter = document.querySelector(
+      ".site-footer .footer-col.newsletter .stk-footer-newsletter"
+    );
+
+    if(!bottom || !legal || !newsletter) return;
+
+    /*
+      IMPORTANT:
+      We measure the actual newsletter form on screen.
+      This makes the RIGHT edge of Security land at the
+      EXACT SAME X position as the RIGHT edge of the email box.
+    */
+    var emailRect = newsletter.getBoundingClientRect();
+    var bottomRect = bottom.getBoundingClientRect();
+
+    var exactRightOffset = bottomRect.right - emailRect.right;
+
+    bottom.style.setProperty(
+      "--stackly-legal-right-offset",
+      exactRightOffset + "px"
+    );
+  }
+
+  function run(){
+    requestAnimationFrame(function(){
+      requestAnimationFrame(exactEmailRightAlignment);
+    });
+  }
+
+  window.addEventListener("load", run);
+  window.addEventListener("resize", run);
+
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(run);
+  }
+
+  if(window.ResizeObserver){
+    var observer = new ResizeObserver(run);
+
+    var footer = document.querySelector(".site-footer");
+    var newsletter = document.querySelector(
+      ".site-footer .footer-col.newsletter .stk-footer-newsletter"
+    );
+
+    if(footer) observer.observe(footer);
+    if(newsletter) observer.observe(newsletter);
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", run);
+  }else{
+    run();
+  }
+})();
+</script>
+
 </body>
 </html>

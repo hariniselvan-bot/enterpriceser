@@ -1320,6 +1320,384 @@ body:not(.stackly-services-page) .stk-services-demo-btn{
 }
 </style>
 
+
+<style id="stackly-footer-bottom-true-container-fix">
+/* =========================================================
+   STACKLY ABOUT — FOOTER BOTTOM TRUE CONTAINER ALIGNMENT
+   The bottom row must use the SAME horizontal container edges
+   as the Stackly logo and the footer columns above.
+   ========================================================= */
+
+.site-footer > .container > .stk-footer-bottom-shell {
+  position: static !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 28px 0 0 !important;
+  padding: 24px 0 0 !important;
+  box-sizing: border-box !important;
+  border-top: 1px solid #e6e3e0 !important;
+  overflow: visible !important;
+}
+
+.site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row {
+  position: static !important;
+  inset: auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 32px !important;
+}
+
+.site-footer > .container > .stk-footer-bottom-shell .stk-footer-copyright {
+  display: block !important;
+  flex: 0 1 auto !important;
+  width: auto !important;
+  max-width: 60% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  white-space: nowrap !important;
+  line-height: 1.4 !important;
+}
+
+.site-footer > .container > .stk-footer-bottom-shell .stk-footer-legal {
+  display: flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 28px !important;
+  width: auto !important;
+  max-width: 40% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+}
+
+.site-footer > .container > .stk-footer-bottom-shell .stk-footer-legal a {
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  line-height: 1.4 !important;
+}
+
+@media (max-width: 767px) {
+  .site-footer > .container > .stk-footer-bottom-shell {
+    margin-top: 24px !important;
+    padding-top: 18px !important;
+  }
+
+  .site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .site-footer > .container > .stk-footer-bottom-shell .stk-footer-copyright,
+  .site-footer > .container > .stk-footer-bottom-shell .stk-footer-legal {
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    text-align: left !important;
+  }
+
+  .site-footer > .container > .stk-footer-bottom-shell .stk-footer-legal {
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 10px 20px !important;
+  }
+}
+</style>
+
+<style id="stackly-about-footer-final-lock">
+/* FINAL FOOTER ALIGNMENT LOCK — do not inherit legacy footer positioning */
+.site-footer > .container > .stk-footer-bottom-shell {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  float: none !important;
+  clear: both !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  float: none !important;
+  display: grid !important;
+  grid-template-columns: minmax(0,1fr) auto !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  column-gap: 32px !important;
+}
+
+.site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row > .stk-footer-copyright {
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+  float: none !important;
+  grid-column: 1 !important;
+  justify-self: start !important;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
+}
+
+.site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row > .stk-footer-legal {
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+  float: none !important;
+  grid-column: 2 !important;
+  justify-self: end !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 28px !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
+}
+
+.site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row > .stk-footer-legal > a {
+  position: static !important;
+  display: inline-block !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  transform: none !important;
+}
+
+@media (max-width: 767px) {
+  .site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  .site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row > .stk-footer-copyright,
+  .site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row > .stk-footer-legal {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-self: auto !important;
+    white-space: normal !important;
+    text-align: left !important;
+  }
+  .site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row > .stk-footer-legal {
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+  }
+}
+</style>
+
+<style id="stackly-footer-alignment-absolute-final">
+/* FINAL: footer bottom must align with the same .container as the footer content. */
+.site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row {
+  all: unset !important;
+  box-sizing: border-box !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 32px !important;
+}
+
+.site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row > .stk-footer-copyright {
+  all: unset !important;
+  box-sizing: border-box !important;
+  display: block !important;
+  grid-column: 1 !important;
+  justify-self: start !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+  white-space: nowrap !important;
+  text-align: left !important;
+  font: inherit !important;
+  line-height: 1.4 !important;
+}
+
+.site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row > .stk-footer-legal {
+  all: unset !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  grid-column: 2 !important;
+  justify-self: end !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex-wrap: nowrap !important;
+  gap: 28px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+}
+
+.site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row > .stk-footer-legal > a {
+  all: unset !important;
+  box-sizing: border-box !important;
+  display: inline-block !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font: inherit !important;
+  line-height: 1.4 !important;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+@media (max-width: 767px) {
+  .site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  .site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row > .stk-footer-copyright,
+  .site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row > .stk-footer-legal {
+    width: 100% !important;
+    white-space: normal !important;
+    justify-self: auto !important;
+  }
+  .site-footer > .container > .stk-footer-bottom-shell > .stk-footer-bottom-row > .stk-footer-legal {
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+  }
+}
+</style>
+
+<style id="stackly-footer-exact-container-alignment">
+/* FINAL: bottom row is a SEPARATE .container, exactly matching the
+   footer logo / columns / newsletter content width. */
+.site-footer > .stk-footer-bottom-container {
+  width: 100% !important;
+  max-width: var(--container-width, 1248px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 28px !important;
+  padding: 24px 0 0 !important;
+  box-sizing: border-box !important;
+  border-top: 1px solid #e6e3e0 !important;
+}
+
+.site-footer > .stk-footer-bottom-container > .stk-footer-bottom-row {
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 32px !important;
+  box-sizing: border-box !important;
+}
+
+.site-footer > .stk-footer-bottom-container .stk-footer-copyright {
+  flex: 0 1 auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  white-space: nowrap !important;
+  line-height: 1.4 !important;
+  position: static !important;
+  transform: none !important;
+}
+
+.site-footer > .stk-footer-bottom-container .stk-footer-legal {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 28px !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+  position: static !important;
+  transform: none !important;
+}
+
+.site-footer > .stk-footer-bottom-container .stk-footer-legal a {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  line-height: 1.4 !important;
+}
+
+@media (max-width: 767px) {
+  .site-footer > .stk-footer-bottom-container {
+    margin-top: 24px !important;
+    padding-top: 18px !important;
+  }
+  .site-footer > .stk-footer-bottom-container > .stk-footer-bottom-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+  }
+  .site-footer > .stk-footer-bottom-container .stk-footer-copyright,
+  .site-footer > .stk-footer-bottom-container .stk-footer-legal {
+    width: 100% !important;
+    white-space: normal !important;
+    text-align: left !important;
+  }
+  .site-footer > .stk-footer-bottom-container .stk-footer-legal {
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 10px 20px !important;
+  }
+}
+</style>
+
 </head>
 <body class="about-page">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -1813,10 +2191,15 @@ body:not(.stackly-services-page) .stk-services-demo-btn{
 </script>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; <span data-year>2025</span> Stackly Enterprise Software. All rights reserved.</p>
-      <div class="legal-links">
-        <a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Security</a>
+  </div>
+  </div>
+  <div class="stk-footer-bottom-container">
+    <div class="stk-footer-bottom-row">
+      <p class="stk-footer-copyright">© 2026 Stackly. All rights reserved.</p>
+      <div class="stk-footer-legal">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Service</a>
+        <a href="404.html">Security</a>
       </div>
     </div>
   </div>

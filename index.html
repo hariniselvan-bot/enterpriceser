@@ -684,6 +684,131 @@
 }
 </style>
 
+
+
+
+
+
+
+
+<style id="stackly-footer-bottom-real-alignment">
+/* =========================================================
+   STACKLY — FINAL FOOTER BOTTOM ROW ALIGNMENT
+   ONLY the copyright/legal row is changed.
+   The row is forced to use the same 1332px desktop
+   content boundary as the visible footer content.
+   ========================================================= */
+
+/* Desktop */
+@media (min-width: 768px) {
+  .site-footer .stk-footer-bottom-final {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    /* IMPORTANT:
+       The footer columns/content in the reference image
+       occupy the centered 1332px content area.
+       Do NOT let this row stretch to the browser edges. */
+    width: min(1332px, calc(100% - 48px)) !important;
+    max-width: 1332px !important;
+
+    margin: 30px auto 0 !important;
+    padding: 0 !important;
+
+    height: 55px !important;
+    box-sizing: border-box !important;
+
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+  }
+
+  .site-footer .stk-footer-bottom-final > p {
+    position: static !important;
+    flex: 0 0 auto !important;
+
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: left !important;
+    white-space: nowrap !important;
+    transform: none !important;
+  }
+
+  .site-footer .stk-footer-bottom-final > .legal-links {
+    position: static !important;
+    flex: 0 0 auto !important;
+
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+
+    gap: 28px !important;
+    white-space: nowrap !important;
+    transform: none !important;
+  }
+
+  .site-footer .stk-footer-bottom-final > .legal-links a {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .site-footer .stk-footer-bottom-final {
+    position: static !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+
+    margin: 28px 0 0 !important;
+    padding: 0 !important;
+
+    transform: none !important;
+  }
+
+  .site-footer .stk-footer-bottom-final > p {
+    position: static !important;
+    width: auto !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    white-space: normal !important;
+  }
+
+  .site-footer .stk-footer-bottom-final > .legal-links {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+
+    gap: 12px 18px !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -1486,8 +1611,8 @@
 </script>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; <span data-year>2025</span> Stackly Enterprise Software. All rights reserved.</p>
+    <div class="stk-footer-bottom-final">
+      <p>&copy; <span data-year>2026</span> Stackly Enterprise Software. All rights reserved.</p>
       <div class="legal-links">
         <a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Security</a>
       </div>
@@ -1704,6 +1829,9 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('load',setHomeActive);
 })();
 </script>
+
+
+
 
 </body>
 </html>
